@@ -1,5 +1,19 @@
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 
+class MemberManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError("メールアドレスは必須です")
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)  # パスワードをハッシュ化
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_admin", True)
+        return self.create_user(email, password, **extra_fields)
 class Member(models.Model):
     GENDER_CHOICES = [
         ('1', 'Male'),
@@ -15,13 +29,14 @@ class Member(models.Model):
 
     class Meta:
         db_table = 'users'  # テーブル名を指定
+        managed = False
 
     def __str__(self):
-        return self.nickname
+        return self.username
 
 class UserHistory(models.Model):
-    table_users_history_id = models.AutoField(primary_key=True)
-    user_id = models.IntegerField()  # `Member` の `user_id` と対応
+    id = models.AutoField(primary_key=True)
+    user_id = models.IntegerField()  # Member の user_id と対応
     start_time = models.DateTimeField()  # 来店日時
 
     class Meta:

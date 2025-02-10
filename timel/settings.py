@@ -129,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  # Pathオブジェクトを使ってパスを指定
 ]
+
+LOGIN_URL = '/login/'
+# AUTH_USER_MODEL = 'app.Member'
