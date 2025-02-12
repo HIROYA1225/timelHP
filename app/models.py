@@ -35,10 +35,20 @@ class Member(models.Model):
         return self.username
 
 class UserHistory(models.Model):
-    id = models.AutoField(primary_key=True)
-    user_id = models.IntegerField()  # Member の user_id と対応
+    # id = models.AutoField(primary_key=True)
+    user_id = models.IntegerField(primary_key=True)  # Member の user_id と対応
     start_time = models.DateTimeField()  # 来店日時
+    end_time = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         db_table = 'table_users_history'  # 既存のテーブル名を指定
         managed = False  # Django によるテーブル管理をしない（マイグレーションで変更されない）
+
+class CountPlayedGames(models.Model):
+    user_id = models.IntegerField(primary_key=True)  # `users` テーブルの `user_id` と紐づく
+    bdg_id = models.IntegerField()  # プレイしたボードゲームのID
+    updated_at = models.DateTimeField()  # 最後にプレイした日
+
+    class Meta:
+        db_table = 'played_bdgs'  # MySQL の既存テーブル
+        managed = False  # Django にテーブル管理させない

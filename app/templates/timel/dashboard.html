@@ -79,8 +79,12 @@
                         <div class="space-y-2">
                             <p class="text-xs text-gray-400 uppercase">来店回数</p>
                             <div class="flex items-center space-x-2">
-                                <h1 class="text-xl font-semibold">{{ visit_count }}回</h1>
-                                <p class="text-xs bg-green-50 text-green-500 px-1 rounded">+2.0</p>
+                                <h1 class="text-xl font-semibold">{{ visit_count }} 回</h1>
+                                {% if visit_count_diff >= 0 %}
+                                    <p class="text-xs bg-green-50 text-green-500 px-1 rounded">+{{visit_count_diff}}</p>
+                                {% else %}
+                                    <p class="text-xs bg-red-50 text-red-500 px-1 rounded">-{{visit_count_diff}}</p>
+                                {% endif %}
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-300">
@@ -92,8 +96,12 @@
                         <div class="space-y-2">
                             <p class="text-xs text-gray-400 uppercase">プレイゲーム数</p>
                             <div class="flex items-center space-x-2">
-                                <h1 class="text-xl font-semibold">20</h1>
-                                <p class="text-xs bg-green-50 text-green-500 px-1 rounded">+6.0</p>
+                                <h1 class="text-xl font-semibold">{{ game_count }} 個</h1>
+                                {% if game_count_diff >= 0 %}
+                                    <p class="text-xs bg-green-50 text-green-500 px-1 rounded">+{{game_count_diff}}</p>
+                                {% else %}
+                                    <p class="text-xs bg-red-50 text-red-500 px-1 rounded">-{{game_count_diff}}</p>
+                                {% endif %}
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-300">
@@ -105,8 +113,12 @@
                         <div class="space-y-2">
                             <p class="text-xs text-gray-400 uppercase">プレイ時間</p>
                             <div class="flex items-center space-x-2">
-                                <h1 class="text-xl font-semibold">31</h1>
-                                <p class="text-xs bg-red-50 text-red-500 px-1 rounded">-2.5</p>
+                                <h1 class="text-xl font-semibold">{{stay_time}} min.</h1>
+                                {% if stay_time_diff >= 0 %}
+                                    <p class="text-xs bg-green-50 text-green-500 px-1 rounded">+{{stay_time_diff}}</p>
+                                {% else %}
+                                    <p class="text-xs bg-red-50 text-red-500 px-1 rounded">-{{stay_time_diff}}</p>
+                                {% endif %}
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-300">

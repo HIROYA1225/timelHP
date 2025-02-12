@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import check_password
-from .models import Member,UserHistory
+from .models import Member,UserHistory,CountPlayedGames
 from .forms import MemberForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 import calendar
-from django.db import connection
+from django.db import connection,models
+from datetime import timedelta
+
 
 
 # 会員登録ビュー
@@ -49,27 +51,69 @@ def dashboard_view(request):
     user_id = request.session.get('user_id')
     now = timezone.now()
 
-    print("ログインユーザーのID:", user_id)
+    # **今月の開始・終了日**
+    first_day_current = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    last_day_current = now.replace(day=calendar.monthrange(now.year, now.month)[1], hour=23, minute=59, second=59, microsecond=999999)
 
-    # 今月の初日を作成（例: 2025/2/1 00:00:00）
-    first_day = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
-    # 今月の最終日を取得して、末日の23:59:59.999999を作成
-    last_day_num = calendar.monthrange(now.year, now.month)[1]
-    last_day = now.replace(day=last_day_num, hour=23, minute=59, second=59, microsecond=999999)
+    # 前月の開始・終了日
+    first_day_previous = (first_day_current - timedelta(days=1)).replace(day=1)
+    last_day_previous = first_day_current - timedelta(seconds=1)
 
-    # user_idはモデルではIntegerFieldで定義してるから、user.idを使ってフィルターするで
-    # start_timeは来店日時のフィールドやから、今月の範囲で絞ってる
+    ### **1️⃣ 来店回数を取得**
     visit_count = UserHistory.objects.filter(
         user_id=user_id,
-        start_time__range=(first_day, last_day)
+        start_time__range=(first_day_current, last_day_current)
     ).count()
+    visit_count_previous = UserHistory.objects.filter(
+        user_id=user_id,
+        start_time__range=(first_day_previous, last_day_previous)
+    ).count()
+    # 前月差
+    visit_count_diff = visit_count - visit_count_previous
 
-    print("visit_count:", visit_count)
-    print("実行されたSQL:", connection.queries[-1]["sql"])
+    # **今月のプレイしたゲーム数をカウント**
+    game_count = CountPlayedGames.objects.filter(
+        user_id=user_id,
+        updated_at__range=(first_day_current, last_day_current)  # `updated_at` が今月の範囲内
+    ).count()
+    game_count_previous = CountPlayedGames.objects.filter(
+        user_id=user_id,
+        updated_at__range=(first_day_previous, last_day_previous)  # `updated_at` が今月の範囲内
+    ).count()
+    # 前月差
+    game_count_diff = game_count - game_count_previous
+
+    # 滞在時間
+    def get_total_stay_time(user_id,start_date, end_date):
+        total_stay_time = UserHistory.objects.filter(
+            user_id=user_id,
+            start_time__range=(start_date, end_date),
+            end_time__isnull=False
+        ).exclude(end_time__lt=models.F('start_time')).aggregate(
+            total_stay_time=models.Sum(
+                models.ExpressionWrapper(
+                    models.F('end_time') - models.F('start_time'),
+                    output_field=models.DurationField()
+                )
+            )
+        )['total_stay_time']
+        
+        return (total_stay_time.total_seconds() // 60) if total_stay_time else 0
+
+    stay_time = get_total_stay_time(user_id,first_day_current, last_day_current)
+    stay_time_previous = get_total_stay_time(user_id,first_day_previous, last_day_previous)
+
+    # 前月差
+    stay_time_diff = stay_time - stay_time_previous
+
 
     context = {
         'visit_count': visit_count,
-        # 他の必要なデータも追加するならここに書くんや
+        'visit_count_diff': visit_count_diff,
+        'game_count': game_count,
+        'game_count_diff': game_count,
+        'stay_time': int(stay_time),
+        'stay_time_diff': stay_time_diff,
     }
     return render(request, 'timel/dashboard.html',context)
 
