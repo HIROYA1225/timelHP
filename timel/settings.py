@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Pathオブジェクトを使ってパスを指定
+    BASE_DIR / 'timel' / 'app' / 'static',  # Pathオブジェクトを使ってパスを指定
 ]
 
 LOGIN_URL = '/login/'

@@ -45,10 +45,11 @@ class UserHistory(models.Model):
         managed = False  # Django によるテーブル管理をしない（マイグレーションで変更されない）
 
 class CountPlayedGames(models.Model):
-    user_id = models.IntegerField(primary_key=True)  # `users` テーブルの `user_id` と紐づく
+    play_bdg_history_id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField()  # `users` テーブルの `user_id` と紐づく
     bdg_id = models.IntegerField()  # プレイしたボードゲームのID
-    updated_at = models.DateTimeField()  # 最後にプレイした日
+    created_at = models.DateTimeField()  # 最後にプレイした日
 
     class Meta:
-        db_table = 'played_bdgs'  # MySQL の既存テーブル
+        db_table = 'play_bdg_history'  # MySQL の既存テーブル
         managed = False  # Django にテーブル管理させない

@@ -74,11 +74,11 @@ def dashboard_view(request):
     # **今月のプレイしたゲーム数をカウント**
     game_count = CountPlayedGames.objects.filter(
         user_id=user_id,
-        updated_at__range=(first_day_current, last_day_current)  # `updated_at` が今月の範囲内
+        created_at__range=(first_day_current, last_day_current)  # `updated_at` が今月の範囲内
     ).count()
     game_count_previous = CountPlayedGames.objects.filter(
         user_id=user_id,
-        updated_at__range=(first_day_previous, last_day_previous)  # `updated_at` が今月の範囲内
+        created_at__range=(first_day_previous, last_day_previous)  # `updated_at` が今月の範囲内
     ).count()
     # 前月差
     game_count_diff = game_count - game_count_previous
