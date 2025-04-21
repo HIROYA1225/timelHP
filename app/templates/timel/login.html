@@ -33,40 +33,45 @@
             <!-- サインアップフォーム -->
               <div class="form-wrapper">
                 <button type="button" class="switcher switcher-signup">
-                  Sign Up
+                  Sign Up COGNITO
                   <span class="underline"></span>
                 </button>
                 <form class="form form-signup" method="post">
-                {% csrf_token %}
+                  {% csrf_token %}
                   <fieldset>
-                    <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                    <legend>以下の情報を入力してください。</legend>
+              
                     <div class="input-block">
-                      <label for="signup-username">Username</label>
+                      <label for="signup-username">名前</label>
                       {{ signup_form.username }}
                     </div>
+              
                     <div class="input-block">
-                      <label for="signup-gender">Gender</label>
+                      <label for="signup-gender">性別</label>
                       <div class="radio-group">
-                        <input type="radio" id="gender-male" name="gender" value="2">
+                        <input type="radio" id="gender-male" name="gender" value="male" required>
                         <label for="gender-male" class="radio-label">男性</label>
-
-                        <input type="radio" id="gender-female" name="gender" value="1" required>
+              
+                        <input type="radio" id="gender-female" name="gender" value="female">
                         <label for="gender-female" class="radio-label">女性</label>
                         
-                        <input type="radio" id="gender-none" name="gender" value="0">
+                        <input type="radio" id="gender-none" name="gender" value="none">
                         <label for="gender-none" class="radio-label">無回答</label>
                       </div>
-                  </div>
-                    <div class="input-block">
-                        <label for="signup-birthday">Birthday</label>
-                        {{ signup_form.birthday }}
                     </div>
+              
                     <div class="input-block">
-                        <label for="signup-email">Email</label>
-                        {{ signup_form.email }}
+                      <label for="signup-birthday">生年月日</label>
+                      {{ signup_form.birthday }}
                     </div>
+              
                     <div class="input-block">
-                      <label for="signup-password">Password</label>
+                      <label for="signup-email">メールアドレス</label>
+                      {{ signup_form.email }}
+                    </div>
+              
+                    <div class="input-block">
+                      <label for="signup-password">パスワード</label>
                       {{ signup_form.password }}
                     </div>
                   </fieldset>

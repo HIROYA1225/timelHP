@@ -26,6 +26,7 @@ class Member(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=255)
+    cognito_sub = models.CharField(max_length=64, unique=True)
 
     class Meta:
         db_table = 'users'  # テーブル名を指定

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth.hashers import make_password
 from .models import Member,UserHistory,CountPlayedGames
 from .forms import MemberForm, LoginForm
 from django.contrib.auth.decorators import login_required
@@ -7,6 +8,11 @@ from django.utils import timezone
 import calendar
 from django.db import connection,models
 from datetime import timedelta
+import traceback
+from .utils import cognito_signup,get_sub_from_cognito,generate_entry_token,generate_entry_qr
+from datetime import datetime
+import boto3
+from django.conf import settings
 
 
 
@@ -154,15 +160,61 @@ def signup_login_view(request):
                 print(form.errors)
 
         elif 'signup' in request.POST:  # サインアップフォームが送信された場合
-            print("POSTデータ:", request.POST)
-            signup_form = MemberForm(request.POST)
-            if signup_form.is_valid():
-                signup_form.save()
-                return redirect('success')  # サインアップ成功ページへリダイレクト
-            else:
-                print("フォームのエラー:", signup_form.errors)
+            print("Cognitoサインアップ押下:")
+            name = request.POST.get('username')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            gender = request.POST.get('gender')
+            raw_birthday = request.POST.get('birthday')  # yyyymmdd形式で受け取る
+            # 'yyyy-mm-dd' に変換
+            birthdate = datetime.strptime(raw_birthday, '%Y%m%d').strftime('%Y-%m-%d')
 
+            try:
+                response = cognito_signup(email, password, name, gender, birthdate)
+                # MySQLにもユーザー追加
+                sub = get_sub_from_cognito(email)
+                hashed_password = make_password(password)
+                Member.objects.create(
+                    cognito_sub=sub,
+                    email=email,
+                    username=name,
+                    gender=gender,
+                    birthday=raw_birthday,
+                    password=hashed_password
+                )
+
+                print("Cognito sign up success")
+                return redirect('confirm_signup')  # 確認コード入力画面などへ
+            except Exception as e:
+                print("Cognito signup error:", e)
+                traceback.print_exc()
+                return render(request, 'timel/login.html', {'error': str(e)})
     return render(request, 'timel/login.html', {
         'login_form': login_form,
         'signup_form': signup_form,
     })
+
+def confirm_signup_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        code = request.POST.get('code')
+
+        try:
+            client = boto3.client('cognito-idp', region_name=settings.AWS_REGION)
+            client.confirm_sign_up(
+                ClientId=settings.COGNITO_CLIENT_ID,
+                Username=email,
+                ConfirmationCode=code
+            )
+            # 成功したらログインページへリダイレクト
+            return redirect('signup_login')
+        except Exception as e:
+            print("確認エラー:", e)
+            return render(request, 'timel/confirm_signup.html', {'error': str(e)})
+
+    return render(request, 'timel/confirm_signup.html')
+
+def show_qr_view(request):
+    user_sub = request.session.get("cognito_sub")
+    img_qr = generate_entry_qr(user_sub)
+    return render(request, 'timel/enter_qr.html', {"img_qr": img_qr})
