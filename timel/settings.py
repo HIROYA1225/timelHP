@@ -55,7 +55,7 @@ ROOT_URLCONF = 'timel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/ec2-user/timel/timel/app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,8 +127,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Pathオブジェクトを使ってパスを指定
+    BASE_DIR / 'timel' / 'app' / 'static',  # Pathオブジェクトを使ってパスを指定
 ]
 
 LOGIN_URL = '/login/'
 # AUTH_USER_MODEL = 'app.Member'
+
+COGNITO_USER_POOL_ID = 'ap-northeast-1_aRy2gWIlK'
+COGNITO_CLIENT_ID = '5snngq7nn2mkte7e2untsevgbb'
+AWS_REGION = 'ap-northeast-1'
+
+SECRET_KEY = "your-very-secret-key"  # settings.py に置いてもOK

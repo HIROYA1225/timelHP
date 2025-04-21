@@ -7,9 +7,9 @@ import datetime
 class MemberForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
     GENDER_CHOICES = [
-        ('1', 'Male'),
-        ('2', 'Female'),
-        ('3', 'Other'),
+        (1, 'Male'),
+        (2, 'Female'),
+        (3, 'Other'),
     ]
 
     gender = forms.ChoiceField(choices=GENDER_CHOICES, required=True)  # ラジオボタンに変更

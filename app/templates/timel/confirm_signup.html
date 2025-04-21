@@ -1,0 +1,19 @@
+<form method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend>メールに届いた確認コードを入力してください</legend>
+  
+      <div class="input-block">
+        <label for="email">メールアドレス</label>
+        <input type="email" name="email" required>
+      </div>
+  
+      <div class="input-block">
+        <label for="code">確認コード</label>
+        <input type="text" name="code" required>
+      </div>
+  
+      <button type="submit">確認する</button>
+    </fieldset>
+  </form>
+  

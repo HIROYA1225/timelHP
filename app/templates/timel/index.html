@@ -1,568 +1,1027 @@
 {% load static %}
-<!DOCTYPE html><html lang="en"><head>
-
+<html><head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- <meta name="keywords" content="workshop,Paris,Art,shoes,Shoe care,Shoe Repair,Shoe repair,Tsutaya,Bookstore,Book cafe,bar,Baked goods,Marche,Pasela,Konami Credo,Riga Royale,Hotel,Sogo,Bus center,Rental space,Conference room ,event venue,Event,Location,Fashionable,Good vibes,Good point,beautiful,Tourism,map,cake,Night,lunch,Naka-ku,Alone,reading,Book,cafe,tea leaf,Parking Lot,parking,Motocho,restaurant,Reading meeting,wedding,Second party,Sundries,stationery,magazine,Comic,Bunko,new book,illustration,book cover,work,Internet,Wi-Fi,museum,art,Kamiyacho Nishi,Kamiya-cho East,Hiroshima Castle,Hiroshima City Hall,Central park,Credoho, ワークショップ,パリ,アート,靴,シューケア,シューリペア,靴修理,蔦屋,書店,ブックカフェ,バー,焼き菓子,マルシェ,パセーラ,基町クレド,リーガロイヤル,ホテル,そごう,バスセンター,レンタルスペース,貸し会議室,イベント会場,イベント,ロケ,おしゃれ,いい感じ,いいとこ,きれい,観光,地図,ケーキ,夜,ランチ,中区,ひとり,読書,ブックカフェ,おひとりさま,茶葉,駐車場,パーキング,基町,飲食店,読書会,結婚式,二次会,雑貨,文具,文房具,雑誌,コミック,文庫,新書,図鑑,ブックカバー,仕事,インターネット,ワイファイ,美術館,美術,芸術,紙屋町西,県庁前,原爆ドーム前,紙屋町東,広島城,広島市民球場,中央公園,クレドホー"/> -->
+    <link rel="stylesheet" href="{% static 'timel/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'timel/css/swiper.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'timel/images/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'timel/images/favicon-16x16.png' %}" sizes="16x16">
     
-    <title>AUTOCAFE</title>
-    
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-    
-    <link rel="stylesheet" href="{% static 'timel/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/LineIcons.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/aos.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'timel/css/default.css' %}">
-    <body>
-    
-    <!-- <div class="preloader">
-    <div class="loader_34">
-    <div class="ytp-spinner">
-    <div class="ytp-spinner-container">
-    <div class="ytp-spinner-rotator">
-    <div class="ytp-spinner-left">
-    <div class="ytp-spinner-circle"></div>
-    </div>
-    <div class="ytp-spinner-right">
-    <div class="ytp-spinner-circle"></div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div> -->
-    
-    
-    <header id="home" class="header-area pt-100">
-    <div class="shape header-shape-one">
-    <img src="{% static 'timel/images/shape-1.png' %}" alt="shape">
-    </div> 
-    <div class="shape header-shape-tow animation-one">
-    <img src="{% static 'timel/images/shape-2.png' %}" alt="shape">
-    </div> 
-    <div class="shape header-shape-three animation-one">
-    <img src="{% static 'timel/images/shape-3.png' %}" alt="shape">
-    </div> 
-    <div class="shape header-shape-fore">
-    <img src="{% static 'timel/images/shape-4.png' %}" alt="shape">
-    </div> 
-    <div class="navigation-bar">
-    <div class="container">
-    <div class="row">
-    <div class="col-lg-12">
-    <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">
-    <img src="{% static 'timel/images/logo2.png' %}" alt="Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="toggler-icon"></span>
-    <span class="toggler-icon"></span>
-    <span class="toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul id="nav" class="navbar-nav ml-auto">
-    <li class="nav-item active">
-    <a class="page-scroll" href="#home">Home</a>
-    </li>
-    <li class="nav-item">
-    <a class="page-scroll" href="#concept">Concept</a>
-    </li>
-    <li class="nav-item">
-    <a class="page-scroll" href="#service">Services</a>
-    </li>
-    <li class="nav-item">
-    <a class="page-scroll" href="#howto">HowTo</a>
-    </li>
-    <li class="nav-item">
-    <a class="page-scroll" href="#price">Price</a>
-    </li>
-    </ul> 
-    </div>
-    <div class="navbar-btn ml-20 d-none d-sm-block">
-        <a class="main-btn" href="{% url 'signup_login' %}"><i class="lni-phone"></i>Log in/Sign up</a>
-        <a class="main-btn" href="search.html"><i class="lni-search"></i>Game List</a>
-    </div>
-    </nav> 
-    </div>
-    </div> 
-    </div> 
-    </div> 
-    <div class="header-banner d-flex align-items-center">
-    <div class="container">
-    <div class="row">
-    <div class="col-xl-8 col-lg-9 col-sm-10">
-    <div class="banner-content">
-    <h4 class="sub-title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">Welcome to</h4>
-    <h1 class="banner-title mt-10 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2s"><span></span>The AUTOCAFE</h1>
-    <a class="banner-place mt-25 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2.3s">GET UNPLAYED PLAYED</a>
-    </div> 
-    </div>
-    </div> 
-    </div> 
-    <div class="banner-image bg_cover" style="background-image: url(static/timel/images/banner-image.png)"></div>
-    </div> 
-    </header>
-    
-    <!-- コンセプト -->
-    <section id="concept" class="concept-area pt-80 pb-130">
-    <div class="container">
-    <div class="row">
-    <div class="col-lg-6">
-    <div class="concept-image mt-50 clearfix">
-    <div class="single-image float-left">
-    <img src="{% static 'timel/images/concept-1.png' %}" alt="concept">
-    </div> 
-    <div data-aos="fade-right" class="concept-btn">
-    <a class="main-btn" href="#">Have fun!</a>
-    </div>
-    <div class="single-image image-tow float-right">
-    <img src="{% static 'timel/images/concept-2.png' %}" alt="concept">
-    </div> 
-    </div> 
-    </div>
-    <div class="col-lg-6">
-    <div class="concept-content mt-45">
-    <h4 class="concept-welcome">The concept</h4>
-    <h3 class="concept-title mt-10">我々のコンセプト</h3>
-    <p class="mt-25">「ボードゲーム × テクノロジーで新たな体験を」<br> 
-        ボードゲームの持つ人と人を繋げる力と、最新テクノロジーの便利さを融合させた、これまでにない新しいゲームカフェ。それが、私たちの無人ボードゲームカフェです。ここでは、従来のボードゲームカフェの常識を覆し、誰でも自由に、そして気軽にボードゲームの楽しさを体験できる場を提供しています。
-        <br> 
-        <br>
-        無人運営だからと言って、何も分からずにゲームを始める必要はありません。各テーブルに設置されたタブレット端末を通じて、すぐにゲームのルールを確認したり、プレイ方法の動画を視聴できます。わからないことがあれば、AIに直接質問して解決！ゲームの世界にどっぷり浸るためのサポートが、いつでも手元にあります。</p>
-    </div> 
-    </div>
-    </div> 
-    </div> 
-    </section>
-    
-    <!-- サービス -->
-    <section id="service" class="services-area pt-125 pb-130 gray-bg">
-    <div class="container">
-    <div class="row justify-content-center">
-    <div class="col-lg-6">
-    <div class="section-title text-center pb-20">
-    <h5 class="sub-title mb-15">Our Services</h5>
-    <h2 class="title">我々が提供するもの</h2>
-    </div> 
-    </div>
-    </div> 
-    <div class="row justify-content-center">
-    <div class="col-lg-4 col-md-6 col-sm-8">
-    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-    <div class="services-icon">
-    <i class="lni-paint-roller"></i>
-    </div>
-    <div class="services-content mt-15">
-    <h4 class="services-title">自由なゲーム体験</h4>
-    <p class="mt-20">タブレット端末を使って、ゲームのルールを確認したり、AIに質問してゲームの理解を深めたり、スムーズに遊べる環境を整えました。ボードゲームに慣れていない方でも、すぐに楽しむことができるサポートシステムが充実しています。</p>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8">
-    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-    <div class="services-icon">
-    <i class="lni-blackboard"></i>
-    </div>
-    <div class="services-content mt-15">
-    <h4 class="services-title">時間に縛られないプレイ</h4>
-    <p class="mt-20">無人ならではのフレキシビリティがあり、早朝でも深夜でも、いつでもボードゲームをプレイできる環境です。時間に縛られず、自分たちのペースでゲームに集中できる、リラックスした空間を提供しています。</p>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8">
-    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-    <div class="services-icon">
-    <i class="lni-home"></i>
-    </div>
-    <div class="services-content mt-15">
-    <h4 class="services-title">豊富なゲームラインナップ</h4>
-    <p class="mt-20">初心者向けの軽めのゲームから、ボードゲームファンも満足できる深い戦略性を持つゲームまで、幅広いラインナップをご用意。新しいゲームにもどんどん挑戦できるよう、定期的にゲームを更新しています。</p>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8">
-    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-    <div class="services-icon">
-    <i class="lni-briefcase"></i>
-    </div>
-    <div class="services-content mt-15">
-    <h4 class="services-title">プレイ履歴とリコメンド</h4>
-    <p class="mt-20">遊んだゲームや評価をもとに、あなたにピッタリのゲームをAIが提案します。新しいゲームとの出会いが、あなたの次のボードゲーム体験をより豊かにしてくれます。</p>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8">
-    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-    <div class="services-icon">
-    <i class="lni-handshake"></i>
-    </div>
-    <div class="services-content mt-15">
-    <h4 class="services-title">無人でも安心・充実のサポート</h4>
-    <p class="mt-20">各テーブルに設置されたタブレット端末を通じて、すぐにゲームのルールを確認したり、プレイ方法の動画を視聴できます。わからないことがあれば、AIに直接質問して解決！ゲームの世界にどっぷり浸るためのサポートが、いつでも手元にあります。</p>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8">
-    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-    <div class="services-icon">
-    <i class="lni-grow"></i>
-    </div>
-    <div class="services-content mt-15">
-    <h4 class="services-title">ボードゲームで新しい繋がりを</h4>
-    <p class="mt-20">無人でも、ここでは同じ趣味を持つ仲間たちと出会い、共にゲームを楽しむことができます。ゲームを通じて、自然に会話が生まれ、新しい友人や仲間との繋がりが広がる場所、それが私たちのボードゲームカフェです。</p>
-    </div>
-    </div> 
-    </div>
-    </div> 
-    </div> 
-    </section>
-    
-    <!-- 利用方法 -->
-    <section id="howto" class="howto-area pt-125 pb-130">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-50">
-                        <h5 class="sub-title mb-15">How to Use</h5>
-                        <h2 class="title">ご利用方法<h2>
-                        <h4 class="howto-in">入室時</h4>
-                    </div> 
-                </div>
-            </div> 
-        </div>
-        <div class="container-fluid">
-            <div class="row howto-active">
-                <div class="col-lg-4">
-                    <div class="single-howto">
-                        <div class="howto-image">
-                            <img src="{% static 'timel/images/howto-1.png' %}" alt="howto">
-                        </div>
-                        <div class="howto-content">
-                            <a class="howto-title" href="#">Home Interior Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-howto">
-                        <div class="howto-image">
-                            <img src="{% static 'timel/images/howto-2.png' %}" alt="howto">
-                        </div>
-                        <div class="howto-content">
-                            <a class="howto-title" href="#">Home Interior Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-howto">
-                        <div class="howto-image">
-                            <img src="{% static 'timel/images/howto-3.png' %}" alt="howto">
-                        </div>
-                        <div class="howto-content">
-                            <a class="howto-title" href="#">Home Interior Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-howto">
-                        <div class="howto-image">
-                            <img src="{% static 'timel/images/howto-4.png' %}" alt="howto">
-                        </div>
-                        <div class="howto-content">
-                            <a class="howto-title" href="#">Home Interior Design</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    <!-- <section id="price" class="price-area pt-125 pb-130 gray-bg">
-    <div class="container">
-    <div class="row justify-content-center">
-    <div class="col-lg-6">
-    <div class="section-title text-center pb-20">
-    <h5 class="sub-title mb-15">Meet The price</h5>
-    <h2 class="title">Our Expert Designers</h2>
-    </div> 
-    </div>
-    </div> 
-    <div class="row">
-    <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="single-price text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-    <div class="price-image">
-    <img src="images/price-1.jpg" alt="price">
-    </div>
-    <div class="price-content">
-    <h4 class="price-name"><a href="#">Rob Hope</a></h4>
-    <span class="sub-title">CEO &amp; Founder</span>
-    <ul class="social mt-25">
-    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-    <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-    </ul>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="single-price text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-    <div class="price-image">
-    <img src="images/price-2.jpg" alt="price">
-    </div>
-    <div class="price-content">
-    <h4 class="price-name"><a href="#">Patric Green</a></h4>
-    <span class="sub-title">Chief Designer</span>
-    <ul class="social mt-25">
-    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-    <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-    </ul>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="single-price text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-    <div class="price-image">
-    <img src="images/price-3.jpg" alt="price">
-    </div>
-    <div class="price-content">
-    <h4 class="price-name"><a href="#">Daryl Dixon</a></h4>
-    <span class="sub-title">Consultant</span>
-    <ul class="social mt-25">
-    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-    <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-    </ul>
-    </div>
-    </div> 
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="single-price text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
-    <div class="price-image">
-    <img src="images/price-4.jpg" alt="price">
-    </div>
-    <div class="price-content">
-    <h4 class="price-name"><a href="#">Mark Parker</a></h4>
-    <span class="sub-title">Intern</span>
-    <ul class="social mt-25">
-    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-    <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-    </ul>
-    </div>
-    </div> 
-    </div>
-    </div> 
-    </div> 
-    </section> -->
-    
-    <article id="price">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-50">
-                        <h5 class="sub-title mb-15">Meet The price</h5>
-                        <h2 class="title">料金<h2>
-                    </div> 
-                </div>
-            </div> 
-        </div>
-        <ul>
-            <li class="bg-grey">
-            <button>One-Time Event</button>
-            </li>
-            <li class="bg-ltpurple">
-            <button>Club Lotus</button>
-            </li>
-        </ul>
-        <table>
-            <thead>
-                <tr>
-                    <th class="donotshow"></th>
-                    <th class="bg-grey">平日</th>
-                    <th class="bg-ltpurple">土日祝</th>
-                </tr>
-            </thead>
-                <tbody>
-                <tr>
-                    <td class="donotshow"></td>
-                    <td class="short"><span class="txt-top">基本料金</span></td>
-                    <td class="shortltpurple"><span class="txt-top">基本料金</span></td>
-                </tr>
-                <tr>
-                    <td class="priceheader"></td>
-                    <td class="price"><span class="txt-l">¥100/10min</span></td>
-                    <td class="priceltpurple"><span class="txt-l">¥150/10min</span></td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="sep">お得なパック料金</td>
-                </tr>
-                <tr>
-                    <td>1H</td>
-                    <td class="grey"><strong>¥400</strong></td>
-                    <td class="ltpurple"><strong>¥500</strong></td>
-                </tr>
-                <tr>
-                    <td>3H</td>
-                    <td class="grey"><strong>¥1000</strong></td>
-                    <td class="ltpurple"><strong>¥1300</strong></td>
-                </tr>
-                <tr>
-                    <td>6H</td>
-                    <td class="grey"><strong>¥1600</strong></td>
-                    <td class="ltpurple"><strong>¥2100</strong></td>
-                </tr>
-                <tr>
-                    <td>9H</td>
-                    <td class="grey"><strong>¥2200</strong></td>
-                    <td class="ltpurple"><strong>¥3100</strong></td>
-                </tr>
-                <tr>
-                    <td>12H</td>
-                    <td class="grey"><strong>¥2800</strong></td>
-                    <td class="ltpurple"><strong>¥3800</strong></td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="sep">夜間フリータイム</td>
-                </tr>
-                <tr>
-                    <td>21:00 - 5:00</td>
-                    <td class="grey"><strong>¥2000</strong></td>
-                    <td class="ltpurple"><strong>¥2500</strong></td>
-                </tr>
-            </tbody>
-        </table>
-    </article>
-    
-    
-    <!-- <section id="testimonial" class="testimonial-area pt-130 pb-130">
-    <div class="shape shape-one">
-    <img src="images/shape.png" alt="testimonial">
-    </div>
-    <div class="shape shape-tow">
-    <img src="images/shape.png" alt="testimonial">
-    </div>
-    <div class="shape shape-three">
-    <img src="images/shape.png" alt="testimonial">
-    </div>
-    <div class="container">
-    <div class="testimonial-bg bg_cover pt-80 pb-80" style="background-image: url(images/testimonial-bg.jpg)">
-    <div class="row">
-    <div class="col-xl-4 offset-xl-7 col-lg-5 offset-lg-6 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-    <div class="testimonial-active">
-    <div class="single-testimonial text-center">
-    <div class="testimonial-image">
-    <img src="images/t-1.jpg" alt="Testimonial">
-    <div class="quota">
-    <i class="lni-quotation"></i>
-    </div>
-    </div>
-    <div class="testimonial-content mt-20">
-    <p>Lorem ipsum dolor sit amet, ectetur adipiscing elit. Phasellus vel erat ces, commodo lectus eu, finibus diam. m ipsum dolor sit amet, ectetur.</p>
-    <h5 class="testimonial-name mt-15">Fajar</h5>
-    <span class="sub-title">Random Customer</span>
-    </div>
-    </div> 
-    <div class="single-testimonial text-center">
-    <div class="testimonial-image">
-    <img src="images/t-2.jpg" alt="Testimonial">
-    <div class="quota">
-    <i class="lni-quotation"></i>
-    </div>
-    </div>
-    <div class="testimonial-content mt-20">
-    <p>Lorem ipsum dolor sit amet, ectetur adipiscing elit. Phasellus vel erat ces, commodo lectus eu, finibus diam. m ipsum dolor sit amet, ectetur.</p>
-    <h5 class="testimonial-name mt-15">Alina</h5>
-    <span class="sub-title">Tesla Motors</span>
-    </div>
-    </div> 
-    <div class="single-testimonial text-center">
-    <div class="testimonial-image">
-    <img src="images/t-3.jpg" alt="Testimonial">
-    <div class="quota">
-    <i class="lni-quotation"></i>
-    </div>
-    </div>
-    <div class="testimonial-content mt-20">
-    <p>Lorem ipsum dolor sit amet, ectetur adipiscing elit. Phasellus vel erat ces, commodo lectus eu, finibus diam. m ipsum dolor sit amet, ectetur.</p>
-    <h5 class="testimonial-name mt-15">Celina</h5>
-    <span class="sub-title">CEO, Alo</span>
-    </div>
-    </div> 
-    </div> 
-    </div>
-    </div> 
-    </div> 
-    </div> 
-    </section> -->
-    
-    
-    <section id="map" class="map-area">
-        <div class="mapouter">
-            <div class="gmap_canvas">
-            <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.4609516156556!2d136.90610751193424!3d35.170062107770036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600370d14c8d9e6b%3A0xeb12333b3b1af460!2z5qCE6aeF!5e0!3m2!1sja!2sjp!4v1728308273292!5m2!1sja!2sjp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            </div>
-        </div>
-        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(static/timel/images/map-bg.jpg)"></div>
-    </section>
-    
-    
-    <footer id="footer" class="footer-area">
-        <div class="footer-widget pt-80 pb-130">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-8">
-                        <div class="footer-logo mt-50">
-                            <ul class="footer-social mt-20">
-                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-                                <li><a href="#"><i class="lni-google"></i></a></li>
-                                <li><a href="#"><i class="lni-instagram"></i></a></li>
-                            </ul>
-                        </div> 
-                    </div>
-                </div> 
-            </div> 
-        </div> 
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright text-center">
-                            <p>Copyright 2022 by YourCompany.</p>
-                        </div> 
-                    </div>
-                </div> 
-            </div> 
-        </div> 
-    </footer>
-    
-    
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-    
-    
-    
-    
-    
-    
-    <script src="{% static 'timel/js/main.js' %}"></script>
-    <script data-cfasync="false" src="{% static 'timel/js/email-decode.min.js' %}"></script>
-    <script src="{% static 'timel/js/modernizr-3.6.0.min.js' %}"></script>
-    <script src="{% static 'timel/js/bootstrap.min.js' %}"></script>
-    <!-- <script src="{% static 'timel/js/ajax-place.js' %}"></script> -->
-    <script src="{% static 'timel/js/wow.min.js' %}"></script>
-    <script src="{% static 'timel/js/slick.min.js' %}"></script>
-    <script src="{% static 'timel/js/scrolling-nav.js' %}"></script>
-    <script src="{% static 'timel/js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'timel/js/aos.js' %}"></script>
-    <script src="{% static 'timel/js/validator.min.js' %}"></script>
+		<!-- All in One SEO 4.1.5.3 -->
+		<title>sofa BOOK AND CAFE </title>
+		<meta name="description" content="sofa BOOK AND CAFEのホームページです。大切にしたのは、一人ひとりがパーソナルな時間を楽しめる空間づくり。ご家族やご友人、恋人と訪れるのはもちろん、ビジネスにもご利用いただけますので、ぜひ貴方らしいsofaのくつろぎ方を探してください。">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="https://sofabookcafe.com/">
 
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8c7b8e2629fa0eb3',t:'MTcyNzEwNTIwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"8c7b8e2629fa0eb3","version":"2024.8.0","r":1,"token":"9a6015d415bb4773a0bff22543062d3b","servertiming":{"name":{"cfextpri":true,"cfl4":true}}}"="" crossorigin="anonymous"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149256362-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-149256362-1');
+</script>
+		<meta property="og:locale" content="ja_JP">
+		<meta property="og:site_name" content="sofa BOOK AND CAFE | sofa BOOK AND CAFEのホームページです。大切にしたのは、一人ひとりがパーソナルな時間を楽しめる空間づくり。ご家族やご友人、恋人と訪れるのはもちろん、ビジネスにもご利用いただけますので、ぜひ貴方らしいsofaのくつろぎ方を探してください。">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="sofa BOOK AND CAFE ">
+		<meta property="og:description" content="sofa BOOK AND CAFEのホームページです。大切にしたのは、一人ひとりがパーソナルな時間を楽しめる空間づくり。ご家族やご友人、恋人と訪れるのはもちろん、ビジネスにもご利用いただけますので、ぜひ貴方らしいsofaのくつろぎ方を探してください。">
+		<meta property="og:url" content="https://sofabookcafe.com/">
+		<meta property="og:image" content="{% static 'timel/images/ogp.jpg' %}">
+		<meta property="og:image:secure_url" content="{% static 'timel/images/ogp.jpg' %}">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:domain" content="sofabookcafe.com">
+		<meta name="twitter:title" content="sofa BOOK AND CAFE ">
+		<meta name="twitter:description" content="sofa BOOK AND CAFEのホームページです。大切にしたのは、一人ひとりがパーソナルな時間を楽しめる空間づくり。ご家族やご友人、恋人と訪れるのはもちろん、ビジネスにもご利用いただけますので、ぜひ貴方らしいsofaのくつろぎ方を探してください。">
+		<meta name="twitter:image" content="https://sofabookcafe.com/cms/wp-content/uploads/2021/10/ogp.jpg">
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/sofabookcafe.com\/#website","url":"https:\/\/sofabookcafe.com\/","name":"sofa BOOK AND CAFE","description":"sofa BOOK AND CAFE\u306e\u30db\u30fc\u30e0\u30da\u30fc\u30b8\u3067\u3059\u3002\u5927\u5207\u306b\u3057\u305f\u306e\u306f\u3001\u4e00\u4eba\u3072\u3068\u308a\u304c\u30d1\u30fc\u30bd\u30ca\u30eb\u306a\u6642\u9593\u3092\u697d\u3057\u3081\u308b\u7a7a\u9593\u3065\u304f\u308a\u3002\u3054\u5bb6\u65cf\u3084\u3054\u53cb\u4eba\u3001\u604b\u4eba\u3068\u8a2a\u308c\u308b\u306e\u306f\u3082\u3061\u308d\u3093\u3001\u30d3\u30b8\u30cd\u30b9\u306b\u3082\u3054\u5229\u7528\u3044\u305f\u3060\u3051\u307e\u3059\u306e\u3067\u3001\u305c\u3072\u8cb4\u65b9\u3089\u3057\u3044sofa\u306e\u304f\u3064\u308d\u304e\u65b9\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002","inLanguage":"ja","publisher":{"@id":"https:\/\/sofabookcafe.com\/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/sofabookcafe.com\/?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https:\/\/sofabookcafe.com\/#organization","name":"sofa BOOK AND CAFE","url":"https:\/\/sofabookcafe.com\/","logo":{"@type":"ImageObject","@id":"https:\/\/sofabookcafe.com\/#organizationLogo","url":"https:\/\/sofabookcafe.com\/cms\/wp-content\/uploads\/2021\/10\/Logo.png","width":461,"height":355},"image":{"@id":"https:\/\/sofabookcafe.com\/#organizationLogo"},"sameAs":["https:\/\/www.facebook.com\/sofahiroshima\/","https:\/\/www.instagram.com\/sofa_hiroshima\/"]},{"@type":"BreadcrumbList","@id":"https:\/\/sofabookcafe.com\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/sofabookcafe.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/sofabookcafe.com\/","name":"\u30db\u30fc\u30e0","description":"sofa BOOK AND CAFE\u306e\u30db\u30fc\u30e0\u30da\u30fc\u30b8\u3067\u3059\u3002\u5927\u5207\u306b\u3057\u305f\u306e\u306f\u3001\u4e00\u4eba\u3072\u3068\u308a\u304c\u30d1\u30fc\u30bd\u30ca\u30eb\u306a\u6642\u9593\u3092\u697d\u3057\u3081\u308b\u7a7a\u9593\u3065\u304f\u308a\u3002\u3054\u5bb6\u65cf\u3084\u3054\u53cb\u4eba\u3001\u604b\u4eba\u3068\u8a2a\u308c\u308b\u306e\u306f\u3082\u3061\u308d\u3093\u3001\u30d3\u30b8\u30cd\u30b9\u306b\u3082\u3054\u5229\u7528\u3044\u305f\u3060\u3051\u307e\u3059\u306e\u3067\u3001\u305c\u3072\u8cb4\u65b9\u3089\u3057\u3044sofa\u306e\u304f\u3064\u308d\u304e\u65b9\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002","url":"https:\/\/sofabookcafe.com\/"}}]},{"@type":"WebPage","@id":"https:\/\/sofabookcafe.com\/#webpage","url":"https:\/\/sofabookcafe.com\/","name":"sofa BOOK AND CAFE","description":"sofa BOOK AND CAFE\u306e\u30db\u30fc\u30e0\u30da\u30fc\u30b8\u3067\u3059\u3002\u5927\u5207\u306b\u3057\u305f\u306e\u306f\u3001\u4e00\u4eba\u3072\u3068\u308a\u304c\u30d1\u30fc\u30bd\u30ca\u30eb\u306a\u6642\u9593\u3092\u697d\u3057\u3081\u308b\u7a7a\u9593\u3065\u304f\u308a\u3002\u3054\u5bb6\u65cf\u3084\u3054\u53cb\u4eba\u3001\u604b\u4eba\u3068\u8a2a\u308c\u308b\u306e\u306f\u3082\u3061\u308d\u3093\u3001\u30d3\u30b8\u30cd\u30b9\u306b\u3082\u3054\u5229\u7528\u3044\u305f\u3060\u3051\u307e\u3059\u306e\u3067\u3001\u305c\u3072\u8cb4\u65b9\u3089\u3057\u3044sofa\u306e\u304f\u3064\u308d\u304e\u65b9\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002","inLanguage":"ja","isPartOf":{"@id":"https:\/\/sofabookcafe.com\/#website"},"breadcrumb":{"@id":"https:\/\/sofabookcafe.com\/#breadcrumblist"},"datePublished":"2019-01-22T01:25:52+09:00","dateModified":"2021-10-14T15:27:53+09:00"}]}
+		</script>
+		<!-- All in One SEO -->
+
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/sofabookcafe.com\/cms\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.22"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="{% static 'timel/css/style.min.css' %}" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://sofabookcafe.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sofabookcafe.com/cms/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://sofabookcafe.com/cms/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.0.22">
+<link rel="shortlink" href="https://sofabookcafe.com/">
+<link rel="alternate" type="application/json+oembed" href="https://sofabookcafe.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsofabookcafe.com%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://sofabookcafe.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsofabookcafe.com%2F&format=xml">
+  </head>
+  <body>
+
+<div class="index" id="body">
+  <section id="KV">
+    <div class="flexC">
+      <!-- <div class="content">
+        <div class="logo"><img src="images/Logo.png" alt="sofa book and cafe"></div>
+      </div> -->
+    </div>
     
+    <!-- 背景画像とsvgロゴをまとめるコンテナ -->
+    <div class="mv-container" style="position: relative;">
+      <div class="swiperHolder">
+        <div class="imgCard active" style="background-image: url(static/timel/images/woman1.jpg)"></div>
+      </div>
+      
+      <!-- svgロゴを中央に配置 -->
+      <div class="mv-logo-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <img src="{% static 'timel/images/word.png' %}" width="762" height="321" alt="Word">
+      </div>
+    </div>
     
-    </body></html>
+    <nav id="Nav">
+      <a class="lineLogo" href="/"><img src="{% static 'timel/images/longLogo.png' %}" alt=""></a>
+      <div class="navList">
+        <a class="list" href="/about/"><div class="btn0">HOME</div></a>
+        <a class="list" href="/newslist/"><div class="btn0">CONCEPT</div></a>
+        <a class="list" href="/menu/"><div class="btn0">SERVICE</div></a>
+        <a class="list" href="/products/"><div class="btn0">HOWTO</div></a>
+        <a class="list" href="/space/"><div class="btn0">PRICE</div></a>
+        <a class="list" href="/access/"><div class="btn0">ACCESS</div></a>
+        <a class="list" href="{% url 'signup_login' %}"><div class="btn0">LOGIN</div></a>
+        <a class="list" href="search.html"><div class="btn0">GAMES</div></a>
+      </div>
+      <div class="media">
+        <a class="fb" href="https://www.facebook.com/sofahiroshima/" target="_blank"></a>
+        <a class="instergram" href="https://www.instagram.com/sofa_hiroshima/?hl=ja" target="_blank"></a>
+      </div>
+      <div class="menu">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+      </div>
+    </nav>
+  </section>
+  
+  <section id="EventGallery">
+    <div class="swiper-container">
+      <div class="infomation">
+        <div class="content flexC">
+          <div class="info">
+            <div class="title seen"></div>
+            <div class="text seen"></div>
+          </div>
+          <div class="line"></div>
+          <div class="control flex">
+            <div class="arrowB"></div>
+            <div class="numberHolder flex">
+              <div class="no1">0</div>
+              <div class="no2">
+                <div class="cageMover"></div>
+              </div>
+            </div>
+            <div class="arrowF"></div>
+          </div>
+        </div>
+      <!-- </div>
+      <div class="swiper-wrapper">
+        <a class="swiper-slide" style="background-image: url('images/NewsNoImage.png');" title="9月19日(土)からパセーラ3F売場拡大のお知らせ " text="" href="https://sofabookcafe.com/news/9%e6%9c%8819%e6%97%a5%e5%9c%9f%e3%81%8b%e3%82%89%e3%83%91%e3%82%bb%e3%83%bc%e3%83%a93f%e5%a3%b2%e3%82%8a%e5%a0%b4%e3%82%92%e6%8b%a1%e5%a4%a7%e3%81%84%e3%81%9f%e3%81%97%e3%81%be%e3%81%99%e3%80%82/"></a>
+      </div> -->
+    </div>
+  </section>
+  <div class="openSee" id="About"></div>
+  <section id="Consept">
+    <div class="flexC">
+      <div class="cage"><img src="{% static 'timel/images/conseptTitle.png' %}" alt="自宅のつぎに、ラクなとこ。 RELAX HERE AT YOUR SECOND HOME">
+        <p>ボードゲームの持つ人と人を繋げる力と<br> 最新テクノロジーの便利さを融合させた<br> これまでにない新しいゲームカフェ。</p>
+        <p>無人運営だからと言って<br> 何も分からずにゲームを始める必要はありません。</p>
+        <p>ゲームの世界にどっぷり浸るためのサポートが<br> いつでも手元にあります。<br> </p>
+        <p>「いつかやろう」を今日にしよう<br><br></p>
+        <div class="icon">
+          <img src="{% static 'timel/images/AboutImage.png' %}" alt="CAFE,OOKS, SPACE">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <!-- ★ -->
+    <div class="service-page">
+      <!-- 装飾要素 -->
+      <div class="accent-line top"></div>
+      <div class="decoration-circle top-left"></div>
+      
+      <div class="service-container">
+        <div class="title-section">
+          <div class="title-container">
+            <h2 class="title">サービス特徴</h2>
+          </div>
+        </div>
+  
+        <div class="services-grid">
+          <!-- サービス1 -->
+          <div class="service-card" data-index="0">
+            <div class="icon-container">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-title">時間に縛られないプレイ</h3>
+            <div class="divider"></div>
+            <p class="service-description">いつでもどこでも、お好きな時間に自由にお楽しみいただけます。時間の制約なく、あなたのペースでプレイできます。</p>
+            <div class="tooltip">詳しく見る</div>
+          </div>
+  
+          <!-- サービス2 -->
+          <div class="service-card" data-index="1">
+            <div class="icon-container">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+                  <path d="M3 12h18"></path>
+                  <path d="M3 6h18"></path>
+                  <path d="M3 18h18"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-title">プレイ履歴とレコメンド</h3>
+            <div class="divider"></div>
+            <p class="service-description">あなたのプレイ履歴と評価を分析し、好みに合わせたボードゲームをレコメンド。新しい発見をお手伝いします。</p>
+            <div class="tooltip">詳しく見る</div>
+          </div>
+  
+          <!-- サービス3 -->
+          <div class="service-card" data-index="2">
+            <div class="icon-container">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-title">無人でも安心のサポート</h3>
+            <div class="divider"></div>
+            <p class="service-description">24時間365日、AIによるサポートシステムがお客様の疑問やトラブルに対応。いつでも安心してご利用いただけます。</p>
+            <div class="tooltip">詳しく見る</div>
+          </div>
+        </div>
+  
+        <!-- <div class="button-container">
+          <button class="view-more-button">
+            view more
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section id="howto">
+    <!-- ★ -->
+    <div class="bg-background min-h-screen">
+      <!-- ヘッダー部分 -->
+      <div class="bg-dot-pattern relative pt-16 pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-10 to-background z-0"></div>
+  
+        <!-- 装飾要素 -->
+        <!-- <div class="absolute top-10 right-10 w-24 h-24 rounded-blob bg-secondary rotate-12 opacity-30"></div>
+        <div class="absolute bottom-10 left-10 w-32 h-32 rounded-blob bg-primary rotate-45 opacity-20"></div> -->
+  
+      </div>
+  
+      <!-- ステップナビゲーション -->
+      <div class="container mx-auto px-4 py-12">
+        <!-- ステップナビゲーション -->
+  
+      <!-- メインコンテンツ -->
+      <div class="howto-container mx-auto px-4 py-16 relative">
+        <!-- ステップの流れ説明 -->
+        <div class="text-center mb-16">
+          <div class="inline-block bg-secondary rounded-full px-6 py-2 mb-4 shadow-md transform -rotate-2">
+            <span class="text-primary font-bold">4つの簡単ステップ</span>
+          </div>
+          <h2 class="text-2xl md-text-3xl font-bold text-primary mb-4 font-display">ご利用の流れ</h2>
+          <p class="text-muted-foreground max-w-2xl mx-auto">
+            初回登録から退店まで、すべてがシンプルでわかりやすい流れになっています
+          </p>
+        </div>
+  
+        <!-- ステップ1: 初回登録 -->
+        <div class="mb-24 relative">
+          <div class="absolute -top-10 -left-10 w-20 h-20 bg-secondary-30 rounded-blob rotate-12 z-0"></div>
+  
+          <div class="grid md-grid-cols-2 gap-8 items-center">
+            <div class="relative">
+              <div class="bg-white rounded-3xl p-6 md-p-8 shadow-pop border-4 border-secondary relative">
+                <!-- ステップ番号 -->
+                <div class="absolute -top-6 -left-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold border-4 border-white shadow-md">
+                  1
+                </div>
+  
+                <!-- バッジ -->
+                <div class="absolute -top-4 right-8 bg-secondary text-primary px-4 py-1 rounded-full font-bold text-sm transform rotate-3 border-2 border-white shadow-sm">
+                  簡単1分
+                </div>
+  
+                <!-- タイトル -->
+                <div class="flex items-center gap-3 mb-4 mt-2">
+                  <div class="bg-primary rounded-full p-2 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                      <polyline points="10 17 15 12 10 7"></polyline>
+                      <line x1="15" y1="12" x2="3" y2="12"></line>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl md-text-3xl font-bold text-primary font-display">初回登録</h3>
+                </div>
+  
+                <!-- 説明 -->
+                <p class="text-muted-foreground mb-6 bg-secondary-10 p-4 rounded-xl border border-dashed border-secondary-50">
+                  meeebo.com/loginより初回登録をお願いします。所要時間は1分程度です。
+                </p>
+  
+                <!-- ポイント -->
+                <div class="space-y-3 mb-6">
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>メールアドレスを入力して登録ボタンを押す</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>届いたメールのリンクをクリック</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>基本情報を入力して完了</p>
+                  </div>
+                </div>
+  
+                <!-- CTA -->
+                <button class="bg-primary hover-bg-primary-90 text-white rounded-full gap-2 font-bold shadow-pop">
+                  今すぐ登録する
+                  <svg class="h-4 w-4 inline-block ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+  
+            <div class="relative">
+              <div class="bg-white rounded-3xl p-4 shadow-pop border-4 border-secondary transform rotate-2">
+                <div class="aspect-square rounded-2xl overflow-hidden relative">
+                  <img src="{% static 'timel/images/register.png' %}" alt="初回登録" class="object-cover w-full h-full">
+  
+                  <!-- 装飾 -->
+                  <div class="absolute bottom-4 right-4">
+                    <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                        <polyline points="10 17 15 12 10 7"></polyline>
+                        <line x1="15" y1="12" x2="3" y2="12"></line>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-secondary text-primary px-6 py-2 rounded-full font-bold shadow-md border-2 border-white">
+                  STEP 1
+                </div>
+              </div>
+  
+              <!-- 装飾要素 -->
+              <div class="absolute -top-4 -right-4 w-8 h-8 bg-primary-20 rounded-full"></div>
+              <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-secondary-30 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- ステップ2: 受付 -->
+        <div class="mb-24 relative">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-primary-20 rounded-blob -rotate-12 z-0"></div>
+  
+          <div class="grid md-grid-cols-2 gap-8 items-center md-flex-row-reverse">
+            <div class="relative md-order-2">
+              <div class="bg-white rounded-3xl p-6 md-p-8 shadow-pop border-4 border-secondary relative">
+                <!-- ステップ番号 -->
+                <div class="absolute -top-6 -left-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold border-4 border-white shadow-md">
+                  2
+                </div>
+  
+                <!-- バッジ -->
+                <div class="absolute -top-4 right-8 bg-secondary text-primary px-4 py-1 rounded-full font-bold text-sm transform rotate-3 border-2 border-white shadow-sm">
+                  スムーズ
+                </div>
+  
+                <!-- タイトル -->
+                <div class="flex items-center gap-3 mb-4 mt-2">
+                  <div class="bg-primary rounded-full p-2 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                      <path d="M8 10h8v8H8z"></path>
+                      <path d="M7 15h2"></path>
+                      <path d="M15 15h2"></path>
+                      <path d="M7 11h2"></path>
+                      <path d="M15 11h2"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl md-text-3xl font-bold text-primary font-display">受付</h3>
+                </div>
+  
+                <!-- 説明 -->
+                <p class="text-muted-foreground mb-6 bg-secondary-10 p-4 rounded-xl border border-dashed border-secondary-50">
+                  マイページよりQRコードを表示させ、受付をお願いします。テーブル・人数を入力し、入店ください。
+                </p>
+  
+                <!-- ポイント -->
+                <div class="space-y-3 mb-6">
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>アプリのマイページからQRコードを表示</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>受付スタッフにQRコードを提示</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>人数とテーブルの希望を伝える</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="relative md-order-1">
+              <div class="bg-white rounded-3xl p-4 shadow-pop border-4 border-secondary transform rotate-2">
+                <div class="aspect-square rounded-2xl overflow-hidden relative">
+                  <img src="{% static 'timel/images/recep-image.png' %}" alt="受付" class="object-cover w-full h-full">
+  
+                  <!-- 装飾 -->
+                  <div class="absolute bottom-4 right-4">
+                    <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <path d="M8 10h8v8H8z"></path>
+                        <path d="M7 15h2"></path>
+                        <path d="M15 15h2"></path>
+                        <path d="M7 11h2"></path>
+                        <path d="M15 11h2"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-secondary text-primary px-6 py-2 rounded-full font-bold shadow-md border-2 border-white">
+                  STEP 2
+                </div>
+              </div>
+  
+              <!-- 装飾要素 -->
+              <div class="absolute -top-4 -right-4 w-8 h-8 bg-primary-20 rounded-full"></div>
+              <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-secondary-30 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- ステップ3: プレイ -->
+        <div class="mb-24 relative">
+          <div class="absolute -bottom-10 -left-10 w-28 h-28 bg-secondary-30 rounded-blob rotate-45 z-0"></div>
+  
+          <div class="grid md-grid-cols-2 gap-8 items-center">
+            <div class="relative">
+              <div class="bg-white rounded-3xl p-6 md-p-8 shadow-pop border-4 border-secondary relative">
+                <!-- ステップ番号 -->
+                <div class="absolute -top-6 -left-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold border-4 border-white shadow-md">
+                  3
+                </div>
+  
+                <!-- バッジ -->
+                <div class="absolute -top-4 right-8 bg-secondary text-primary px-4 py-1 rounded-full font-bold text-sm transform rotate-3 border-2 border-white shadow-sm">
+                  楽しい！
+                </div>
+  
+                <!-- タイトル -->
+                <div class="flex items-center gap-3 mb-4 mt-2">
+                  <div class="bg-primary rounded-full p-2 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="6" y1="11" x2="10" y2="11"></line>
+                      <line x1="8" y1="9" x2="8" y2="13"></line>
+                      <line x1="15" y1="12" x2="15.01" y2="12"></line>
+                      <line x1="18" y1="10" x2="18.01" y2="10"></line>
+                      <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl md-text-3xl font-bold text-primary font-display">プレイ</h3>
+                </div>
+  
+                <!-- 説明 -->
+                <p class="text-muted-foreground mb-6 bg-secondary-10 p-4 rounded-xl border border-dashed border-secondary-50">
+                  200種類以上あるゲームの中から好きなものを好きなだけプレイしていただけます。おすすめのゲームや個人のプレイ履歴に沿ったレコメンドからもゲームをお選びいただけます。
+                </p>
+  
+                <!-- ポイント -->
+                <div class="space-y-3 mb-6">
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>ゲームラックから好きなゲームを選ぶ</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>スタッフにルール説明を依頼することもできます</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>好きなだけ遊べるので時間を気にせず楽しめます</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+  
+            <div class="relative">
+              <div class="bg-white rounded-3xl p-4 shadow-pop border-4 border-secondary transform rotate-2">
+                <div class="aspect-square rounded-2xl overflow-hidden relative">
+                  <img src="{% static 'timel/images/playing.png' %}" alt="プレイ" class="object-cover w-full h-full">
+  
+                  <!-- 装飾 -->
+                  <div class="absolute bottom-4 right-4">
+                    <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="11" x2="10" y2="11"></line>
+                        <line x1="8" y1="9" x2="8" y2="13"></line>
+                        <line x1="15" y1="12" x2="15.01" y2="12"></line>
+                        <line x1="18" y1="10" x2="18.01" y2="10"></line>
+                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-secondary text-primary px-6 py-2 rounded-full font-bold shadow-md border-2 border-white">
+                  STEP 3
+                </div>
+              </div>
+  
+              <!-- 装飾要素 -->
+              <div class="absolute -top-4 -right-4 w-8 h-8 bg-primary-20 rounded-full"></div>
+              <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-secondary-30 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- ステップ4: 清算/退店 -->
+        <div class="mb-16 relative">
+          <div class="absolute -bottom-10 -right-10 w-20 h-20 bg-primary-20 rounded-blob -rotate-12 z-0"></div>
+  
+          <div class="grid md-grid-cols-2 gap-8 items-center md-flex-row-reverse">
+            <div class="relative md-order-2">
+              <div class="bg-white rounded-3xl p-6 md-p-8 shadow-pop border-4 border-secondary relative">
+                <!-- ステップ番号 -->
+                <div class="absolute -top-6 -left-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold border-4 border-white shadow-md">
+                  4
+                </div>
+  
+                <!-- バッジ -->
+                <div class="absolute -top-4 right-8 bg-secondary text-primary px-4 py-1 rounded-full font-bold text-sm transform rotate-3 border-2 border-white shadow-sm">
+                  お得！
+                </div>
+  
+                <!-- タイトル -->
+                <div class="flex items-center gap-3 mb-4 mt-2">
+                  <div class="bg-primary rounded-full p-2 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 3v18h18"></path>
+                      <path d="m19 9-5 5-4-4-3 3"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl md-text-3xl font-bold text-primary font-display">清算/退店</h3>
+                </div>
+  
+                <!-- 説明 -->
+                <p class="text-muted-foreground mb-6 bg-secondary-10 p-4 rounded-xl border border-dashed border-secondary-50">
+                  テーブルタブレットで清算ボタンを押下し、出口付近の精算機でご精算をお願いします。料金はすべて「自動低料金制」です。お客様のご利用時間に合わせ、ご精算の際に、一番お得なパック料金に自動で切り替わりますので、時間を気にせず、安心してご利用くださいませ。
+                </p>
+  
+                <!-- ポイント -->
+                <div class="space-y-3 mb-6">
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>テーブルタブレットで清算ボタンを押す</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>出口付近の精算機で精算</p>
+                  </div>
+                  <div class="flex items-start gap-3 bg-white rounded-lg p-2 shadow-pop-sm border-2 border-secondary-30">
+                    <div class="bg-primary text-white rounded-full p-1 mt-0.5 flex-shrink-0">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <p>自動低料金制で最もお得な料金に</p>
+                  </div>
+                </div>
+  
+                <!-- 注釈 -->
+                <div class="bg-white rounded-xl p-4 mb-6 border-2 border-primary-30 shadow-pop-sm">
+                  <div class="flex gap-2 items-start">
+                    <div class="bg-primary-10 rounded-full p-1 mt-0.5">
+                      <svg class="h-4 w-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg>
+                    </div>
+                    <p class="text-sm text-muted-foreground">自動低料金制とは？ご利用時間に応じて、自動的に最もお得な料金プランが適用されるシステムです。例えば3時間以上のご利用なら「フリータイムパック」が適用され、お得にご利用いただけます。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="relative md-order-1">
+              <div class="bg-white rounded-3xl p-4 shadow-pop border-4 border-secondary transform rotate-2">
+                <div class="aspect-square rounded-2xl overflow-hidden relative">
+                  <img src="{% static 'timel/images/pay-image.png' %}" alt="清算/退店" class="object-cover w-full h-full">
+  
+                  <!-- 装飾 -->
+                  <div class="absolute bottom-4 right-4">
+                    <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18"></path>
+                        <path d="m19 9-5 5-4-4-3 3"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-secondary text-primary px-6 py-2 rounded-full font-bold shadow-md border-2 border-white">
+                  STEP 4
+                </div>
+              </div>
+  
+              <!-- 装飾要素 -->
+              <div class="absolute -top-4 -right-4 w-8 h-8 bg-primary-20 rounded-full"></div>
+              <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-secondary-30 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="bg-background min-h-screen">
+      <!-- ★ -->
+      <div class="price-container mx-auto px-4 py-16 relative">
+        <div class="header">
+          <h1>料金表</h1>
+          <p>お得なプランをご用意しています！</p>
+        </div>
+  
+        <div class="tabs">
+          <div class="tabs-list">
+            <button class="tab-trigger active" data-tab="all">すべてのプラン</button>
+            <button class="tab-trigger" data-tab="compare">料金比較表</button>
+          </div>
+  
+          <div class="tab-content active" id="all">
+            <!-- 基本料金 -->
+            <div class="card">
+              <div class="card-header basic">
+                <div class="icon-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <h2>基本料金</h2>
+                  <p>10分単位でのご利用</p>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="price-grid">
+                  <div class="price-item">
+                    <div class="icon-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                    </div>
+                    <div>
+                      <h3>平日</h3>
+                      <p class="price">100<span>円/10分</span></p>
+                    </div>
+                  </div>
+                  <div class="price-item">
+                    <div class="icon-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    </div>
+                    <div>
+                      <h3>土日祝</h3>
+                      <p class="price">150<span>円/10分</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- お得なパック料金 -->
+            <div class="card">
+              <div class="card-header pack">
+                <div class="icon-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                </div>
+                <div>
+                  <h2>お得なパック料金</h2>
+                  <p>時間単位でのお得なプラン</p>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="pack-grid">
+                  <div class="pack-column">
+                    <div class="pack-header">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                      <h3>平日パック</h3>
+                    </div>
+                    <div class="pack-items">
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>1時間パック</p>
+                        </div>
+                        <p class="pack-price">400<span>円</span></p>
+                      </div>
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>3時間パック</p>
+                        </div>
+                        <p class="pack-price">1,000<span>円</span></p>
+                      </div>
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>6時間パック</p>
+                        </div>
+                        <p class="pack-price">1,600<span>円</span></p>
+                      </div>
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>9時間パック</p>
+                        </div>
+                        <p class="pack-price">2,200<span>円</span></p>
+                      </div>
+                      <div class="pack-item full-width">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>12時間パック</p>
+                        </div>
+                        <p class="pack-price">2,800<span>円</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="pack-column">
+                    <div class="pack-header">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                      <h3>土日祝パック</h3>
+                    </div>
+                    <div class="pack-items">
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>1時間パック</p>
+                        </div>
+                        <p class="pack-price">500<span>円</span></p>
+                      </div>
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>3時間パック</p>
+                        </div>
+                        <p class="pack-price">1,300<span>円</span></p>
+                      </div>
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>6時間パック</p>
+                        </div>
+                        <p class="pack-price">2,100<span>円</span></p>
+                      </div>
+                      <div class="pack-item">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>9時間パック</p>
+                        </div>
+                        <p class="pack-price">3,100<span>円</span></p>
+                      </div>
+                      <div class="pack-item full-width">
+                        <div class="pack-item-header">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          <p>12時間パック</p>
+                        </div>
+                        <p class="pack-price">3,800<span>円</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- 夜間フリータイム -->
+            <div class="card">
+              <div class="card-header night">
+                <div class="icon-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </div>
+                <div>
+                  <h2>夜間フリータイム</h2>
+                  <p>21:00 - 5:00の間で使い放題</p>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="price-grid">
+                  <div class="price-item">
+                    <div class="icon-badge night-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                    </div>
+                    <div>
+                      <h3>平日</h3>
+                      <p class="price">2,000<span>円</span></p>
+                    </div>
+                  </div>
+                  <div class="price-item">
+                    <div class="icon-badge night-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    </div>
+                    <div>
+                      <h3>土日祝</h3>
+                      <p class="price">2,500<span>円</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="tab-content" id="compare">
+            <div class="card">
+              <div class="card-header pack">
+                <h2 class="centered">料金比較表</h2>
+                <p class="centered">平日と土日祝の料金比較</p>
+              </div>
+              <div class="card-content no-padding">
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="text-left">プラン</th>
+                        <th class="text-center">平日</th>
+                        <th class="text-center">土日祝</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          基本料金（10分）
+                        </td>
+                        <td class="text-center">100円</td>
+                        <td class="text-center">150円</td>
+                      </tr>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          1時間パック
+                        </td>
+                        <td class="text-center">400円</td>
+                        <td class="text-center">500円</td>
+                      </tr>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          3時間パック
+                        </td>
+                        <td class="text-center">1,000円</td>
+                        <td class="text-center">1,300円</td>
+                      </tr>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          6時間パック
+                        </td>
+                        <td class="text-center">1,600円</td>
+                        <td class="text-center">2,100円</td>
+                      </tr>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          9時間パック
+                        </td>
+                        <td class="text-center">2,200円</td>
+                        <td class="text-center">3,100円</td>
+                      </tr>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          12時間パック
+                        </td>
+                        <td class="text-center">2,800円</td>
+                        <td class="text-center">3,800円</td>
+                      </tr>
+                      <tr>
+                        <td class="plan-cell">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                          夜間フリータイム
+                          <span class="note">（21:00-5:00）</span>
+                        </td>
+                        <td class="text-center">2,000円</td>
+                        <td class="text-center">2,500円</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="notice">
+          <p class="notice-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            ご利用に関する注意事項
+          </p>
+          <ul>
+            <li><span class="bullet"></span>料金は全て税込表示です</li>
+            <li><span class="bullet"></span>基本料金は10分単位での課金となります</li>
+            <li><span class="bullet"></span>パック料金は一度のご利用で連続してご利用いただく場合に適用されます</li>
+            <li><span class="bullet"></span>夜間フリータイムは21:00から翌朝5:00までの間でご利用いただけます</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Access">
+    <div class="cage">
+      <div class="header">
+        <h3 class="title">ACCESS</h3>
+      </div><a href="https://maps.app.goo.gl/daigxHC3y5NZ47jM7" target="_blank">
+        <div class="mapHolder" style="background-image: url(static/timel/images/map.png)" alt="sofa book and cafe map"></div></a>
+      <div class="details">
+        <div class="localName">meeebo<span></span></div>
+        <div class="info">
+          <div class="CLL flex">
+            <div class="addressHolder">
+              <div class="address">〒460-0008 愛知県名古屋市中区栄５丁目２６−３６ ＧＳ栄２ビル 5F</div>
+              <div class="email">info@meeebo.com</div>
+              <div class="time">24時間/年中無休</div>
+            </div>
+            <!-- <div class="storeHolder"><img class="title" src="images/bookName.png">
+              <div class="time"> <img src="images/bookTime.png"></div>
+            </div> -->
+          </div>
+          <div class="CLR"><a class="btn1" href="https://maps.app.goo.gl/daigxHC3y5NZ47jM7" target="_blank">GOOGLEマップで見る</a></div>
+          <div class="clearFix"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+	<footer class="cw">
+		<div class="smallCage">
+			<a href="https://daynite.jp/contact/" target="_blank">お問い合わせ</a>
+			<a href="https://daynite.jp/privacy/" target="_blank">個人情報保護方針</a>
+			<a href="https://daynite.jp/personal/" target="_blank">プライバシーポリシー</a>
+		</div>
+		<div class="cage">
+			<div class="text">Copyright © 9999 meeebo All rights reserved.</div>
+		</div>
+	</footer>  
+  <script type="text/javascript" src="{% static 'timel/js/jquery-latest.js' %}"></script>
+	<script type="text/javascript" src="{% static 'timel/js/swiper.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'timel/js/scrollreveal.js' %}"></script>
+	<script type="text/javascript" src="{% static 'timel/js/app.js' %}"></script>
+	<script>
+		var year = new Date().getFullYear();
+		$('.cw .text').html('Copyright © '+ year +' meeebo All rights reserved.');
+	</script>
+
+	<script type="text/javascript" src="js/wp-embed.min.js"></script>
+  
+	
+
+</body></html>
