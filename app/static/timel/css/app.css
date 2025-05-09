@@ -36,41 +36,41 @@
   
   /* 装飾要素 */
   .accent-line {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 4px;
-	background-color: #395246;
-  }
+	  position: absolute;
+	  left: 0;
+	  width: 100%;
+	  height: 4px;
+	  background-color: #395246;
+	}
   
-  .accent-line.top {
+	.accent-line.top {
 	top: 0;
   }
   
   .accent-line.bottom {
 	bottom: 0;
-  }
-  
-  .decoration-circle {
+}
+
+.decoration-circle {
 	position: absolute;
 	border-radius: 50%;
 	background-color: rgba(57, 82, 70, 0.05);
 	z-index: 0;
-  }
-  
-  .decoration-circle.top-left {
+}
+
+.decoration-circle.top-left {
 	top: 80px;
 	left: 40px;
 	width: 128px;
 	height: 128px;
-  }
-  
-  .decoration-circle.bottom-right {
+}
+
+.decoration-circle.bottom-right {
 	bottom: 80px;
 	right: 40px;
 	width: 256px;
 	height: 256px;
-  }
+}
   
   /* タイトルセクション */
   .title-section {
@@ -78,45 +78,44 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	margin-bottom: 4rem;
 	animation: fadeInDown 0.7s ease-out forwards;
-  }
-  
+}
+
   .title-container {
 	display: inline-block;
 	margin-bottom: 1rem;
-  }
-  
-  .title-line {
+}
+
+.title-line {
 	height: 4px;
 	width: 80px;
 	background-color: #395246;
 	margin: 0.5rem auto;
-  }
-  
-  .title {
+}
+
+.title {
 	font-size: 2.5rem;
 	font-weight: bold;
 	color: #395246;
 	line-height: 1.2;
-  }
-  
-  .subtitle {
+}
+
+.subtitle {
 	margin-top: 1rem;
 	color: #666;
 	font-size: 1.25rem;
 	max-width: 48rem;
-  }
-  
-  /* サービスグリッド */
-  .services-grid {
+}
+
+/* サービスグリッド */
+.services-grid {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 2rem;
 	margin-bottom: 4rem;
-  }
+}
   
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
 	.services-grid {
 	  grid-template-columns: repeat(3, 1fr);
 	}
@@ -124,40 +123,40 @@
   
   /* サービスカード */
   .service-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 2rem;
-	background-color: white;
-	border-radius: 0.5rem;
-	border-top: 4px solid #395246;
-	box-shadow: 0 5px 15px rgba(57, 82, 70, 0.05);
-	transition: all 0.3s ease;
-	position: relative;
-	opacity: 0;
-	transform: translateY(20px);
-	animation: fadeInUp 0.5s ease-out forwards;
-  }
-  
-  .service-card:nth-child(1) {
-	animation-delay: 0.2s;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 2rem;
+	  background-color: white;
+	  border-radius: 0.5rem;
+	  border-top: 4px solid #395246;
+	  box-shadow: 0 5px 15px rgba(57, 82, 70, 0.05);
+	  transition: all 0.3s ease;
+	  position: relative;
+	  opacity: 0;
+	  transform: translateY(20px);
+	  animation: fadeInUp 0.5s ease-out forwards;
+	}
+	
+	.service-card:nth-child(1) {
+		animation-delay: 0.2s;
   }
   
   .service-card:nth-child(2) {
-	animation-delay: 0.4s;
-  }
-  
-  .service-card:nth-child(3) {
+	  animation-delay: 0.4s;
+	}
+	
+	.service-card:nth-child(3) {
 	animation-delay: 0.6s;
-  }
+}
   
-  /* .service-card:hover {
+/* .service-card:hover {
 	transform: translateY(-10px);
 	box-shadow: 0 15px 30px rgba(57, 82, 70, 0.15);
-  } */
+} */
   
-  /* アイコンコンテナ */
-  .icon-container {
+/* アイコンコンテナ */
+.icon-container {
 	height: 64px;
 	width: 64px;
 	border-radius: 50%;
@@ -168,76 +167,81 @@
 	margin-bottom: 1.5rem;
 	box-shadow: 0 4px 8px rgba(57, 82, 70, 0.2);
 	transition: all 0.3s ease;
-  }
-  
-  /* .service-card:hover .icon-container {
+}
+
+/* .service-card:hover .icon-container {
 	transform: scale(1.1);
 	box-shadow: 0 8px 16px rgba(57, 82, 70, 0.3);
-  } */
-  
-  .icon {
+} */
+
+.icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: transform 0.5s ease;
-  }
-  
-  .service-card:hover .icon {
+}
+
+.icon img {
+	/* 黒を白に反転 */
+	filter: brightness(0) invert(1);
+}
+
+.service-card:hover .icon {
 	transform: rotate(360deg);
   }
   
   .icon-svg {
-	width: 24px;
-	height: 24px;
-	color: white;
-  }
-  
-  /* サービス��イトル */
+	  width: 24px;
+	  height: 24px;
+	  color: white;
+	}
+	
+	/* サービス��イトル */
   .service-title {
 	font-size: 1.25rem;
 	font-weight: bold;
 	margin-bottom: 0.75rem;
 	color: #395246;
 	text-align: center;
-  }
+}
   
   /* 区切り線 */
   .divider {
-	width: 48px;
-	height: 2px;
-	background-color: #c3bda4;
-	margin-bottom: 1rem;
-  }
+	  width: 48px;
+	  height: 2px;
+	  background-color: #c3bda4;
+	  margin-bottom: 1rem;
+	}
+	
+	/* サービス説明 */
+	.service-description {
+		text-align: left;
+		color: #666;
+		font-size: 0.95rem;
+	}
+	
+	/* ツールチップ */
+	.tooltip {
+		position: absolute;
+		bottom: -12px;
+		background-color: #395246;
+		color: white;
+		font-size: 0.75rem;
+		padding: 0.25rem 1rem;
+		border-radius: 9999px;
+		opacity: 0;
+		transform: scale(0.8);
+		transition: all 0.3s ease;
+		pointer-events: none;
+	}
+	
+	/* .service-card:hover .tooltip {
+		opacity: 1;
+		transform: scale(1);
+	} */
   
-  /* サービス説明 */
-  .service-description {
-	text-align: left;
-	color: #666;
-	font-size: 0.95rem;
-  }
-  
-  /* ツールチップ */
-  .tooltip {
-	position: absolute;
-	bottom: -12px;
-	background-color: #395246;
-	color: white;
-	font-size: 0.75rem;
-	padding: 0.25rem 1rem;
-	border-radius: 9999px;
-	opacity: 0;
-	transform: scale(0.8);
-	transition: all 0.3s ease;
-	pointer-events: none;
-  }
-  
-  /* .service-card:hover .tooltip {
-	opacity: 1;
-	transform: scale(1);
-  } */
-  
-  /* ボタンコンテナ */
-  .button-container {
+	/* ボタンコンテナ */
+	.button-container {
 	display: flex;
 	justify-content: center;
 	position: relative;
@@ -245,10 +249,63 @@
 	opacity: 0;
 	transform: translateY(20px);
 	animation: fadeInUp 0.5s ease-out 0.8s forwards;
+}
+
+@media only screen and (max-width: 415px) {
+  .service-page {
+	  background: url(../images/noise_pc.png) repeat left top;
+	  background-size: cover;
+	}
+  /* ① グリッドを 3 列に */
+  .services-grid {
+	  display: grid;
+	  grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+	  gap: .75rem;          /* 行間・列間 */
+	  justify-items: center;
+	  padding: 0 1rem;
   }
-  
-  /* View Moreボタン */
-  .view-more-button {
+
+  /* ② カード自体は縦並び・中央寄せにする */
+  .service-card {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	  background: none;     /* 余分な枠・影などがあればリセット */
+	  box-shadow: none;
+	  min-width: 0 !important;     /* 横幅制限をリセット */
+	  width: 100%;                 /* 列幅いっぱいに広がる */
+	  padding: .25rem 0;           /* 既存指定はそのまま */
+	  background-color:none;
+	  border-top:none;
+  }
+
+  /* ③ アイコンサイズを統一して少し縮小 */
+  .icon-container .icon img,
+  .icon-container .icon svg {
+	  width: 40px;
+	  height: 40px;
+  }
+
+  /* ④ サービス名（h3）をコンパクトに */
+  .service-title {
+	  white-space: nowrap;   /* ←改行させない           */
+	  overflow: hidden;      /* ←はみ出た分は隠す        */
+	  text-overflow: ellipsis;/* ←必要なら「…」を付ける  */
+	  font-size: .75rem;     /* ←横幅に収めるため少し小さく */
+	  line-height: 1.2;      /* ←文字が潰れないよう調整 */
+	  text-align:center;
+	  margin-top:.25rem;     /* アイコンとの間隔を微調整 */
+  }
+
+  /* ⑤ 説明文・区切り線などは非表示 */
+  .service-description,
+  .divider {
+	  display: none !important;
+  }
+}
+/* View Moreボタン */
+.view-more-button {
 	background-color: #395246;
 	color: white;
 	border: none;
@@ -264,7 +321,7 @@
 	transition: all 0.3s ease;
 	position: relative;
 	z-index: 1;
-  }
+}
   
   .view-more-button:hover {
 	background-color: rgba(57, 82, 70, 0.9);
@@ -459,6 +516,11 @@ table {
 		border-spacing: 0;
 		border-collapse: collapse
 }
+
+html {
+	scroll-behavior: smooth;
+	/* overflow-x:hidden;        横スクロール自体を禁止 (デバッグ中は付けると楽) */
+  }
 
 body,
 html {
@@ -923,6 +985,17 @@ section#KV {
 		text-align: center;
 		position: relative
 }
+
+.mv-logo-overlay {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	
+	/* PC用 */
+	width: 762px;
+	height: 321px;
+	background: url('/static/timel/images/word.png') no-repeat center/contain;
+  }
 
 section#KV .logo {
 		width: 100%;
@@ -2215,9 +2288,11 @@ section#Access .header {
 }
 
 section#Access .mapHolder {
-		height: 400px;
-		position: relative;
-		margin-bottom: 22px
+	width: 100%;
+	aspect-ratio: 16 / 9; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 section#Access .details .localName {
@@ -3142,8 +3217,8 @@ footer {
 				min-height: 0
 		}
 		section#Access .mapHolder {
-				height: 270px;
-				margin-bottom: 40px
+			height: auto !important;
+			padding-bottom: 56.25% !important;  /* 上と同じ比率を指定 */
 		}
 		section#Access .details {
 				text-align: center
@@ -3157,6 +3232,9 @@ footer {
 		section#Access .details .info .CLL .addressHolder,
 		section#Access .details .info .CLL .storeHolder {
 				margin: 0 0 40px 0
+		}
+		.addressHolder{
+			text-align: left;    /* ここでリストを左揃え */
 		}
 		section#Access .details .info .CLL .address,
 		section#Access .details .info .CLL .email,
@@ -3302,6 +3380,15 @@ footer {
 		section#PriceInfo .twinTable .breaker {
 				display: none
 		}
+		.mv-logo-overlay {
+			width: 100%;
+			max-width: 300px;
+			/* ここを追加 */
+			aspect-ratio: 762 / 321;
+			/* auto を削除 or keep for safety */
+			height: auto;
+			background: url('/static/timel/images/word_sp.png') no-repeat center/contain;
+		}
 }
 
 @media only screen and (max-width:360px) {
@@ -3370,7 +3457,7 @@ footer .smallCage a {
 	font-weight: 700;
   }
 
-  /* レイアウト */
+  /* How it works */
   .howto-container {
 	width: 100%;
 	max-width: 1200px;
@@ -3379,6 +3466,47 @@ footer .smallCage a {
 	padding-left: 1rem;
 	padding-right: 1rem;
   }
+
+  /* ティッカー中身を横並び＆アニメーション */
+/* 上下ボーダー用のラッパー */
+.ticker-border {
+	border-top: 3px solid #333;
+	border-bottom: 3px solid #333;
+	overflow: hidden;      /* はみ出し隠し */
+	padding:.625em 0;
+  }
+  
+  /* 背景色・高さ・内側パディング */
+  .text-ticker-wrapper {
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+	padding: 0.5rem 0;
+	overflow: hidden;
+  }
+  
+  /* テキストを横並び＋アニメ */
+  .text-ticker {
+	display: flex;
+	white-space: nowrap;
+	animation: slide-text 15s linear infinite;
+  }
+  
+  /* 各アイテムの間隔・幅 */
+  .text-ticker span {
+	display: inline-block;
+	padding: 0 3rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #222;
+  }
+  
+  
+  /* アニメ定義 */
+  @keyframes slide-text {
+	from { transform: translateX(0); }
+	to   { transform: translateX(-50%); }
+  }
+  
   
   .relative {
 	position: relative;
@@ -3894,6 +4022,22 @@ footer .smallCage a {
 	  background: url(../images/noise_pc.png) repeat left top;
 	}
   }
+
+  @media (max-width:640px){
+	.bg-background {
+	  background: url(../images/noise_pc.png) repeat left top;
+	}
+	.text-center{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		animation: fadeInDown 0.7s ease-out forwards;
+	}
+	.header-img{
+		width: 100%;
+	}
+  }
   
   .bg-white {
 	background-color: white;
@@ -4284,82 +4428,57 @@ footer .smallCage a {
   }
 
   /* 基本スタイル */
-  /* 料金表★ */
-  
-  .main-container {
-	min-height: 100vh;
-	padding: 3rem 0;
-  }
-  
+  /* 料金表↓ */
   .price-container {
-	min-height: 100vh;
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	/* padding: 2rem 1rem; */
-	background: linear-gradient(to bottom, #f8f5f0, white);
-	/* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
+	max-width: 800px;
+	padding: 15px;
+	text-align: center;
   }
-
-  @media screen and (min-width: 768px) {
-	.price-container {
-	  background: url(../images/noise_pc.png) repeat left top;
-	}
-  }
-  
   
   /* ヘッダー */
-  .header {
+  header {
 	text-align: center;
-	margin-bottom: 2.5rem;
+	margin-bottom: 20px;
   }
   
-  .header h1 {
-	font-size: 2.25rem;
-	font-weight: bold;
-	color: #395246;
-	margin-bottom: 0.5rem;
-	letter-spacing: -0.025em;
-  }
-  
-  .header p {
-	color: #c8bb9b;
-	font-weight: 500;
+  h1 {
+	font-size: 1.8rem;
+	color: #4a6fa5;
   }
   
   /* タブ */
   .tabs {
-	width: 100%;
+	margin-bottom: 20px;
   }
   
-  .tabs-list {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.5rem;
-	margin-bottom: 2rem;
-	background-color: #f5f2ea;
-	border-radius: 9999px;
-	padding: 0.25rem;
+  .tab-buttons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+	background-color: #e9ecef;
+	border-radius: 50px;
+	padding: 3px;
   }
   
-  .tab-trigger {
-	font-size: 1.125rem;
-	padding: 0.75rem;
-	border-radius: 9999px;
+  .tab-button {
+	padding: 8px 16px;
 	border: none;
-	background: transparent;
+	background: none;
+	border-radius: 50px;
+	font-size: 0.9rem;
+	font-weight: 500;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
   }
   
-  .tab-trigger.active {
-	background-color: #c8bb9b;
+  .tab-button.active {
+	background-color: #4a6fa5;
 	color: white;
   }
   
   .tab-content {
 	display: none;
-	margin-bottom: 2rem;
   }
   
   .tab-content.active {
@@ -4367,225 +4486,139 @@ footer .smallCage a {
   }
   
   /* カード */
-  .card {
-	border-radius: 1.5rem;
-	overflow: hidden;
-	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-	margin-bottom: 2rem;
-	border: none;
-  }
-  
-  .card-header {
-	padding: 1.5rem;
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	color: white;
-  }
-  
-  .card-header.basic {
-	background: linear-gradient(to right, #c8bb9b, #d5cbb3);
-  }
-  
-  .card-header.pack {
-	background: linear-gradient(to right, #395246, #4a6859);
-  }
-  
-  .card-header.night {
-	background: linear-gradient(to right, #5d4c7a, #7a6a98);
-  }
-  
-  .card-header h2 {
-	font-size: 1.5rem;
-	font-weight: bold;
-  }
-  
-  .card-header p {
-	opacity: 0.9;
-  }
-  
-  .card-header .centered {
-	text-align: center;
-	width: 100%;
-  }
-  
-  .icon-container {
-	/* background-color: white; */
-	padding: 0.75rem;
-	border-radius: 9999px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  }
-  
-  .icon-container .icon {
-	height: 2rem;
-	width: 2rem;
-	/* color: #395246; */
-  }
-  
-  .card-content {
-	padding: 1.5rem;
+  .price-card {
 	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 15px;
+	padding: 15px;
   }
   
-  .card-content.no-padding {
-	padding: 0;
+  .card-title {
+	font-size: 1.2rem;
+	color: #333;
+	margin-bottom: 15px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e9ecef;
   }
   
-  /* 価格グリッド */
-  .price-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1.5rem;
+  .subtitle {
+	font-size: 0.8rem;
+	color: #6c757d;
+	font-weight: normal;
   }
   
-  @media (min-width: 768px) {
-	.price-grid {
-	  grid-template-columns: 1fr 1fr;
-	}
+  .centered {
+	text-align: center;
   }
   
-  .price-item {
-	padding: 1.5rem;
-	background-color: #f9f7f2;
-	border-radius: 1rem;
-	border: 2px solid #c8bb9b;
+  /* 基本料金 */
+  .price-row {
 	display: flex;
-	align-items: center;
-	transition: transform 0.3s ease;
+	gap: 10px;
+	flex-wrap: wrap;
   }
   
-  .price-item:hover {
-	transform: scale(1.05);
+  .price-box {
+	flex: 1;
+	min-width: 120px;
+	padding: 12px;
+	border-radius: 8px;
+	text-align: center;
   }
   
-  .icon-badge {
-	margin-right: 1rem;
-	background-color: #c8bb9b;
-	padding: 0.75rem;
-	border-radius: 9999px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  .weekday {
+	background-color: #e3f2fd;
+	border-left: 4px solid #4a6fa5;
   }
   
-  .icon-badge.night-badge {
-	background-color: #5d4c7a;
+  .weekend {
+	background-color: #ffebee;
+	border-left: 4px solid #dc3545;
   }
   
-  .icon-badge .icon {
-	height: 1.5rem;
-	width: 1.5rem;
-	color: white;
+  .night {
+	background-color: #e8eaf6;
+	border-left: 4px solid #3f51b5;
   }
   
-  .price-item h3 {
-	font-size: 1.125rem;
-	font-weight: 500;
-	color: #395246;
+  .night-weekend {
+	background-color: #f3e5f5;
+	border-left: 4px solid #6f42c1;
+  }
+  
+  .price-box h3 {
+	font-size: 1rem;
+	margin-bottom: 5px;
   }
   
   .price {
-	font-size: 1.875rem;
-	font-weight: bold;
-	margin-top: 0.25rem;
-	color: #395246;
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 0;
   }
   
   .price span {
-	font-size: 1rem;
-	font-weight: normal;
+	font-size: 0.8rem;
+	font-weight: 400;
   }
   
-  /* パックグリッド */
-  .pack-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1.5rem;
-  }
-  
-  @media (min-width: 768px) {
-	.pack-grid {
-	  grid-template-columns: 1fr 1fr;
-	}
+  /* パック料金 */
+  .pack-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
   }
   
   .pack-column {
+	flex: 1;
+	min-width: 250px;
+  }
+  
+  .pack-title {
+	font-size: 1rem;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #e9ecef;
+  }
+  
+  .weekday-title {
+	color: #4a6fa5;
+  }
+  
+  .weekend-title {
+	color: #dc3545;
+  }
+  
+  .pack-row {
 	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+	flex-wrap: wrap;
+	gap: 8px;
   }
   
-  .pack-header {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 1px solid #c8bb9b;
+  .pack-box {
+	flex: 1 0 calc(50% - 8px);
+	background-color: #e3f2fd;
+	border-radius: 6px;
+	padding: 8px;
+	text-align: center;
   }
   
-  .pack-header .icon {
-	color: #c8bb9b;
+  .weekend-box {
+	background-color: #ffebee;
   }
   
-  .pack-header h3 {
-	font-size: 1.125rem;
-	font-weight: bold;
-	color: #395246;
-  }
-  
-  .pack-items {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.75rem;
-  }
-  
-  .pack-item {
-	padding: 1rem;
-	background-color: #f9f7f2;
-	border-radius: 1rem;
-	border: 1px solid #c8bb9b;
-	transition: transform 0.3s ease;
-  }
-  
-  .pack-item:hover {
-	transform: scale(1.05);
-  }
-  
-  .pack-item.full-width {
-	grid-column: span 2;
-  }
-  
-  .pack-item-header {
-	display: flex;
-	align-items: center;
-	margin-bottom: 0.5rem;
-  }
-  
-  .pack-item-header .icon {
-	margin-right: 0.5rem;
-	color: #c8bb9b;
-  }
-  
-  .pack-item-header p {
-	font-size: 0.875rem;
-	font-weight: 500;
-	color: #395246;
+  .pack-time {
+	font-size: 0.8rem;
+	color: #6c757d;
   }
   
   .pack-price {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #395246;
+	font-size: 1.1rem;
+	font-weight: 700;
   }
   
-  .pack-price span {
-	font-size: 0.875rem;
-	font-weight: normal;
-  }
-  
-  /* テーブル */
+  /* 比較表 */
   .table-container {
 	overflow-x: auto;
   }
@@ -4595,99 +4628,481 @@ footer .smallCage a {
 	border-collapse: collapse;
   }
   
-  thead {
-	background-color: #f5f2ea;
-  }
-  
   th {
-	padding: 1rem;
-	font-weight: bold;
-	color: #395246;
-  }
-  
-  th:first-child {
-	border-top-left-radius: 0.5rem;
-  }
-  
-  th:last-child {
-	border-top-right-radius: 0.5rem;
+	background-color: #f8f9fa;
+	padding: 10px;
+	text-align: left;
+	font-weight: 700;
+	font-size: 0.9rem;
   }
   
   td {
-	padding: 1rem;
-	border-bottom: 1px solid #f5f2ea;
+	padding: 10px;
+	border-bottom: 1px solid #e9ecef;
+	font-size: 0.9rem;
   }
   
-  tr:hover {
-	background-color: #f9f7f2;
+  tr:nth-child(even) {
+	background-color: #f8f9fa;
   }
   
-  .text-left {
-	text-align: left;
-  }
-  
-  .text-center {
-	text-align: center;
-  }
-  
-  .plan-cell {
-	display: flex;
-	align-items: center;
-	font-weight: 500;
-  }
-  
-  .plan-cell .icon {
-	margin-right: 0.5rem;
-	color: #c8bb9b;
-  }
-  
-  .plan-cell .note {
-	font-size: 0.875rem;
-	font-weight: normal;
-	color: #666;
-	margin-left: 0.5rem;
+  small {
+	font-size: 0.7rem;
+	color: #6c757d;
   }
   
   /* 注意事項 */
   .notice {
-	margin-top: 2rem;
-	padding: 1.5rem;
-	background-color: #f9f7f2;
-	border-radius: 1rem;
-	border: 1px solid #c8bb9b;
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	padding: 12px;
+	margin-top: 15px;
+	font-size: 0.8rem;
   }
   
-  .notice-title {
-	font-size: 1.125rem;
-	font-weight: bold;
-	margin-bottom: 0.75rem;
-	display: flex;
-	align-items: center;
-  }
-  
-  .notice-title .icon {
-	margin-right: 0.5rem;
-	color: #c8bb9b;
+  .notice h3 {
+	background-color: #395246;  /* 深緑 */
+	color: #ffffff;             /* 文字は白 */
+	padding: 0.75rem 1rem;      /* タイトルらしい余白 */
+	border-radius: 4px;         /* 角丸で優しい印象に */
+	font-size: 1.25rem;         /* 少し大きめ */
+	margin-bottom: 1rem;        /* 下にスペースを */
+	display: inline-block;      /* テキスト幅に応じたブロック化 */
   }
   
   .notice ul {
-	padding-left: 1.75rem;
+	padding-left: 20px;
+	text-align: left;    /* ここでリストを左揃え */
   }
   
   .notice li {
+	margin-bottom: 5px;
+  }
+
+  /* li に■をつける */
+.notice ul li {
+	position: relative;
+	margin-bottom: 0.5rem;
+	padding-left: 1rem;
+  }
+  .notice ul li::before {
+	content: "■";
+	position: absolute;
+	left: 0;
+	top: 0.25em;
+	font-size: 0.8em;
+	color: #395246;
+  }
+
+  .payment-image {
+	display: inline-block;
+	max-width:100%;
+	height:auto;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 600px) {
+	.pack-box {
+	  flex: 1 0 100%;
+	}
+	
+	.price-box {
+	  flex: 1 0 100%;
+	}
+
+	.price-note{
+		font-size: 10px;
+	}
+  }
+
+  /* 料金表↑ */
+
+  
+/* セクション全体 */
+/* 画像スライド↓ */
+.marquee-section {
+	width: 100%;
+	overflow: hidden;
+  }
+  
+  .marquee-wrapper {
+	position: relative;
+	width: 100%;
+	background-image: url('/static/timel/images/noise_pc.png');
+	background-repeat: repeat;
+	padding-top: 3rem;
+  }
+  
+  .marquee {
 	display: flex;
-	align-items: start;
+	width: max-content;      /* 中身の幅だけ伸ばす */
+	white-space: nowrap;     /* 折り返さず横に並べる */
+	animation: marquee 35s linear infinite;
+	transform: translateX(0);         /* 初期状態を明示 */
+	will-change: transform;           /* パフォーマンス向上 */
+	transition: none;                 /* JS制御時にスムーズに */
+  }
+  
+  @keyframes marquee {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-50%); } /* 半分だけ左に */
+  }
+  
+  .marquee img {
+	flex: 0 0 auto;
+	height: 15rem;
+	object-fit: contain;
+	margin-right: 1rem;
+  }
+  
+  .marquee img:nth-child(even) {
+	margin-top: 7.5rem; /* 15rem の半分 */
+  }
+
+  @media only screen and (max-width: 415px) {
+	.marquee img {
+		flex: 0 0 auto;
+		height: 10rem;
+		object-fit: contain;
+		margin-right: 1rem;
+	  }
+  }
+  /* 画像スライド↑ */
+
+
+  /* meeelog */
+  .meeelog_container {
+	display: flex;
+	flex-direction: column;    /* タイトル画像を上に積む */
+	align-items: center;       /* 中央寄せ */
+	padding: 1rem;
+	background: url('/static/timel/images/noise_pc.png') repeat;
+  }
+  
+  /* タイトル画像 */
+  .meeelog_name_img {
+	width: 30%;
+	max-width: 800px;
+	height: auto;
+	margin-bottom: 2rem;
+	display: block;      /* ブロック化して中央揃えを効かせる */
+	margin: 0 auto;      /* 親内で左右中央 */
+	transform: translateX(-75%);  /* 自身幅の50%だけ左にシフト */
+	
+  }
+  
+  /* タイトル下の横並び領域 */
+  .meeelog_body {
+	display: flex;
+	justify-content: center;   /* 子要素グループをまとめて中央に */
+	align-items: flex-start;   /* 上端を揃える */
+	gap: 2rem;                 /* 要素間のスペース */
+	width: 100%;
+	max-width: 1200px;         /* お好みで最大幅を設定 */
+	margin: 0 auto;            /* 画面中央に */
+	box-sizing: border-box;
+	padding: 1rem 0;
+  }
+  
+  /* 左：dashboard-info を幅40%に */
+  .meeelog_body .dashboard-info {
+	flex: 0 0 60%;
+	max-width: 60%;
+  }
+  
+  /* 右：meeelog_img を幅40%に */
+  .meeelog_body .meeelog_img {
+	flex: 0 0 55%;
+	max-width: 55%;
+	height: auto;
+	object-fit: contain;
+	display: block;
+  }
+
+
+  
+  .info-icon {
+	background-color: #c8bb9b;
+	border-radius: 50%;
+	padding: 0.375rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .info-icon svg {
+	width: 16px;
+	height: 16px;
+	color: #395246;
+  }
+  
+  .header h3 {
+	color: white;
+	font-weight: 500;
+	font-size: 1rem;
+  }
+  
+  /* コンテンツ */
+  .meeelog_content {
+	line-height: 1.8;           /* 行間を広めに */
+	font-size: 1rem;            /* 基本フォントサイズ */
+	color: #333;
+  }
+  
+  /* 見出しと本文の間 */
+  .meeelog_content h4 {
+	margin-bottom: 3rem;
+	line-height: 1.3; 
+	font-size: xxx-large;          /* 見出しはやや詰めめ */
+	font-family: "Zen Old Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+  }
+  
+  /* 段落の後ろに余白 */
+  .meeelog_content p {
+	margin-bottom: 1.5rem;
+	line-height: 3;
+	font-size:medium;
+	font-family: "Kosugi Maru", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+
+  }
+  /* 「ログインボタン ＋ feature-list」を左右並びに */
+.feature-actions {
+	display: grid;
+	/* 左列は auto（内容幅）、右列は残り幅 */
+	grid-template-columns: auto 1fr;
+	column-gap: 10rem;        /* 要素間を2rem開ける */
+	align-items: center;  
+  }
+  
+  /* 左右、それぞれ同じ幅 */
+  .feature-actions > * {
+	flex: 1 1 0;
+  }
+  
+  /* ログインボタン */
+  .login-btn {
+	display: inline-block;
+	padding: 1rem;
+	background-color: #395246; /* 深緑 */
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 6px;
+	font-weight: 600;
+	transition: background-color .2s;
+	padding: 1rem 2rem;
+	font-size: 0.875rem;      /* フォントも少し小さく */
+  }
+  .login-btn:hover {
+	background-color: #2f413a;
+  }
+  /* リスト周り */
+  .feature-list {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	margin: 2rem auto 0; /* 上にスペースを入れる */
+  }
+  
+  /* スマホなど幅狭い画面では1列に */
+  @media (max-width:640px){
+	.feature-list { grid-template-columns:1fr; }
+  }
+  .feature-item {
+	margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
+  
+/* feature-item 内の見出しに装飾を適用 */
+.feature-item h3 {
+	position: relative;
+	padding-left: 25px;
 	margin-bottom: 0.5rem;
   }
   
-  .bullet {
-	display: inline-block;
-	width: 0.5rem;
-	height: 0.5rem;
-	background-color: #c8bb9b;
-	border-radius: 50%;
-	margin-top: 0.375rem;
-	margin-right: 0.5rem;
+  /* 左下に三角を生成 */
+  .feature-item h3::before {
+	position: absolute;
+	content: '';
+	bottom: -7px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: solid 15px transparent;
+	border-bottom: solid 15px #395246;
   }
   
+  /* 下線を生成 */
+  .feature-item h3::after {
+	position: absolute;
+	content: '';
+	bottom: -7px;
+	left: 10px;
+	width: calc(100% - 10px);
+	border-bottom: solid 3px #395246;
+  }
+  
+  .feature-item.visible {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
+  .feature-icon {
+	font-size: 1.5rem;
+	color: #c8bb9b;
+	margin-right: 1rem;
+	line-height: 1;
+  }
+  
+  .feature-content h3 {
+	margin: 0 0 0.5rem;
+	font-size: 1.125rem;
+	color: #395246;
+  }
+  
+  .feature-content p {
+	margin: 0;
+	color: #4b5563;
+	line-height: 1.6;
+  }
+  
+  /* 要所に強調したい文章があればマージンを追加 */
+  .meeelog_content .summary {
+	line-height: 1.6;
+	line-height:3;
+  }
+
+  @media (max-width: 640px) {
+
+	/* 全体を縦並び & 中央寄せ */
+	#meeelog .meeelog_container{
+	  display:flex;
+	  flex-direction:column;
+	  align-items:center;         /* 中央揃え */
+	  padding:1rem;
+	  max-width:100%;
+	  box-sizing:border-box;
+	}
+  
+	/* 1) Meeelog ロゴ画像  ─ やや左寄せ */
+	#meeelog .meeelog_name_img{
+	  width:50%;                  /* 指定どおり 50% */
+	  display:block;
+	  margin:0 auto;              /* いったん中央寄せ */
+	  transform:translateX(-35%); /* そこから 10% 左にずらす */
+	}
+
+	/* meeelog_body（説明ブロック＋画像）を上下に積む */
+	#meeelog .meeelog_body{
+	display: flex;            /* すでに flex なら方向を変更 */
+	flex-direction: column;   /* ← 横並び→縦並びに */
+	align-items: center;      /* 中央寄せ */
+	gap: 0.75rem;             /* 要素間の余白（任意） */
+	width: 100%;
+	}
+
+	.meeelog_body .dashboard-info {
+		flex: 0 0 60%;
+		max-width: 80%;
+	}
+  
+	/* 2) キャッチコピー */
+	#meeelog .meeelog_content h4{
+	  margin:0.75rem 0 2rem;
+	  font-size:1.8rem;
+	  text-align:center;
+	  line-height:1.3;
+	}
+
+	/* テキスト領域もフル幅＆中央寄せに */
+	#meeelog .meeelog_content{
+	width: 100%;
+	max-width: 550px;
+	text-align: center;
+	}
+  
+	/* 3) Meeelog 画面イメージ */
+	#meeelog .meeelog_img{
+		order: 2;                 /* meeelog_content(0) の後ろに */
+	  width:100%;
+	  max-width:550px;            /* 画像が大き過ぎる場合の保険 */
+	  height:auto;
+	  margin:0 auto 1rem;
+	  display:block;
+	}
+  
+	/* 4) 説明文・サマリー  ─ 共通設定 */
+	#meeelog .description,
+	#meeelog .summary{
+	  width:90%;
+	  max-width:500px;
+	  margin:0 auto 1.5rem;
+	  text-align:left;
+	  align-self: stretch;/* ← 横幅いっぱいに広げる／中央寄せを上書き */
+	  line-height:2;
+	  font-size: smaller;
+	}
+
+	#meeelog .summary{
+		margin-bottom:0.5rem;
+	}
+  
+	/* （任意）ログインボタンや機能説明を縦並び中央に */
+	#meeelog .feature-actions{
+		margin: 0 auto;   /* ← 左右 auto で中央寄せ */
+		max-width: 500px;
+		width:100%;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		text-align: center;
+	}
+
+	/* 〈summary〉のすぐ下に来るリスト */
+	#meeelog .feature-list{
+		width: 100%;
+		max-width: 500px;      /* ← 画面幅より小さく制限 */
+		margin: 0 auto 20 0;        /* ブロック全体を中央へ */
+		display: grid;                 /* 従来の flex → grid に置き換え */
+		grid-template-columns: repeat(2, 1fr); /* 2 列 */
+		justify-items: center;         /* 中央寄せ */
+		gap: 1rem;             /* カード間のすき間 ※flex用 */
+		order: 1;
+	}
+
+	.feature-list p {
+		display: none;
+	  }
+	
+	/* feature 内の１項目 */
+	#meeelog .feature-item{
+		width: 100%;
+		border-radius:.5rem;
+		padding:.75rem 1rem;
+		box-shadow:0 2px 8px rgba(0,0,0,.05);
+		text-align:center;
+		margin: 0;
+	}
+	
+	/* 〈ログイン〉ボタン ― 一番下に配置 */
+	#meeelog .login-btn{
+		order: 2;                 /* list の後ろに回す */
+		align-self: center;       /* 横中央 */
+		display:inline-block;
+		padding:.6rem 2.5rem;
+		font-weight:600;
+		background:#395246;
+		color:#fff;
+		border-radius:2rem;
+		text-decoration:none;
+		transition:opacity .25s;
+		margin-bottom:1rem;       /* 余白 */
+	}
+	#meeelog .login-btn:hover{opacity:.8;}
+  }
+  
+
   

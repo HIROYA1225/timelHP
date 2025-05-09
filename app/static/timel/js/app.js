@@ -627,24 +627,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.addEventListener('DOMContentLoaded', function() {
 	// タブ切り替え機能
-	const tabTriggers = document.querySelectorAll('.tab-trigger');
+	const tabButtons = document.querySelectorAll('.tab-button');
 	const tabContents = document.querySelectorAll('.tab-content');
 	
-	tabTriggers.forEach(trigger => {
-	  trigger.addEventListener('click', function() {
-		// アクティブなタブトリガーのクラスを削除
-		tabTriggers.forEach(t => t.classList.remove('active'));
+	tabButtons.forEach(button => {
+		button.addEventListener('click', function() {
+		// アクティブなタブボタンのクラスを削除
+		tabButtons.forEach(btn => {
+			btn.classList.remove('active');
+		});
 		
-		// クリックされたタブトリガーにアクティブクラスを追加
+		// クリックされたボタンにアクティブクラスを追加
 		this.classList.add('active');
 		
 		// タブコンテンツを非表示にする
-		tabContents.forEach(content => content.classList.remove('active'));
+		tabContents.forEach(content => {
+			content.classList.remove('active');
+		});
 		
-		// クリックされたタブに対応するコンテンツを表示
+		// クリックされたボタンに対応するコンテンツを表示
 		const tabId = this.getAttribute('data-tab');
 		document.getElementById(tabId).classList.add('active');
-	  });
+		});
 	});
 	
 	// ホバーエフェクト
@@ -659,4 +663,23 @@ document.addEventListener('DOMContentLoaded', function() {
 		this.style.transform = 'scale(1)';
 	  });
 	});
+	const items = document.querySelectorAll('.feature-item');
+	const io = new IntersectionObserver((entries, obs) => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting) {
+		  entry.target.classList.add('visible');
+		  obs.unobserve(entry.target);
+		}
+	  });
+	}, { threshold: 0.1 });
+  
+	items.forEach(item => io.observe(item));
+
+	const ticker = document.querySelector('.text-ticker');
+	if (!ticker) return;
+	// 中身を複製してループ用に２セットに
+	ticker.innerHTML += ticker.innerHTML;
   });
+
+  console.log('🔥 app.js loaded');
+  window.addEventListener('scroll', () => console.log('scroll!'));
