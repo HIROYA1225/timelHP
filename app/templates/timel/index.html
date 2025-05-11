@@ -544,9 +544,7 @@ img.emoji {
 
 	<footer class="cw">
 		<div class="smallCage">
-			<a href="https://daynite.jp/contact/" target="_blank">お問い合わせ</a>
-			<a href="https://daynite.jp/privacy/" target="_blank">個人情報保護方針</a>
-			<a href="https://daynite.jp/personal/" target="_blank">プライバシーポリシー</a>
+			<a href="{% url 'policy' %}" target="_blank">個人情報保護方針</a>
 		</div>
 		<div class="cage">
 			<div class="text">Copyright © 9999 meeebo All rights reserved.</div>
@@ -560,7 +558,4 @@ img.emoji {
 		var year = new Date().getFullYear();
 		$('.cw .text').html('Copyright © '+ year +' meeebo All rights reserved.');
 	</script>
-  
-	
-
 </body></html>
