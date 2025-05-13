@@ -204,6 +204,10 @@
 	color: #395246;
 	text-align: center;
 }
+
+.sp-only {
+	display: none;
+  }
   
   /* 区切り線 */
   .divider {
@@ -296,6 +300,10 @@
 	  line-height: 1.2;      /* ←文字が潰れないよう調整 */
 	  text-align:center;
 	  margin-top:.25rem;     /* アイコンとの間隔を微調整 */
+  }
+
+  .sp-only {
+    display: inline;
   }
 
   /* ⑤ 説明文・区切り線などは非表示 */
@@ -4511,6 +4519,10 @@ footer .smallCage a {
   .centered {
 	text-align: center;
   }
+
+  .price-note{
+	font-size: 15px;
+  }
   
   /* 基本料金 */
   .price-row {
@@ -4603,6 +4615,19 @@ footer .smallCage a {
 	padding: 8px;
 	text-align: center;
   }
+
+  /* 平日パックの3時間を特別に強調 */
+  .weekday-title + .pack-row .pack-box:nth-child(2) {
+	border: 2px solid #4a6fa5;        /* おすすめ感のあるオレンジの境界線 */
+	z-index: 1;
+	
+  }
+
+  /* 土日祝パックの3時間を特別に強調 */
+.weekend-title + .pack-row .weekend-box:nth-child(2) {
+	border: 2px solid #dc3545;        /* おすすめ感のあるオレンジの境界線 */
+	z-index: 1;
+}
   
   .weekend-box {
 	background-color: #ffebee;
@@ -5086,6 +5111,12 @@ footer .smallCage a {
 		text-align:center;
 		margin: 0;
 	}
+
+	.feature-content h3 {
+		margin: 0 0 0.5rem;
+		font-size: 1rem;
+		color: #395246;
+	  }
 	
 	/* 〈ログイン〉ボタン ― 一番下に配置 */
 	#meeelog .login-btn{
