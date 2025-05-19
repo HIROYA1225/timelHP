@@ -16,6 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?
+      family=Noto+Sans+JP:wght@400;700&
+      family=M+PLUS+Rounded+1c&
+      family=Sawarabi+Mincho&
+      display=swap" rel="stylesheet">
 
     
 		<!-- All in One SEO 4.1.5.3 -->
@@ -129,21 +134,59 @@ img.emoji {
             <div class="title seen"></div>
             <div class="text seen"></div>
           </div> -->
-          <div class="line"></div>
-          <!-- <div class="control flex">
-            <div class="arrowB"></div>
-            <div class="numberHolder flex">
+          <!-- <div class="line"></div> -->
+          <div class="control flex">
+            <!-- <div class="arrowB"></div> -->
+            <!-- <div class="numberHolder flex">
               <div class="no1">0</div>
               <div class="no2">
                 <div class="cageMover"></div>
               </div>
-            </div>
-            <div class="arrowF"></div>
-          </div> -->
+            </div> -->
+            <!-- <div class="arrowF"></div> -->
+          </div>
         </div>
       </div>
       <div class="swiper-wrapper">
-        <a class="swiper-slide" style="background-image: url('static/timel/images/FirstTitle.png');"></a>
+        <a
+        class="swiper-slide"
+        style="background-image: url('static/timel/images/FirstTitle.png');"
+      >
+      <div class="news-overlay">
+        <ul class="news-list">
+          <li class="news-item">
+            <div class="date">
+              <span class="year">2023</span>
+              <span class="md">11.24</span>
+            </div>
+            <div class="category">お知らせ</div>
+            <div class="content">『編集者のための〆切手帳』を発売しました</div>
+            <div class="arrow">→</div>
+          </li>
+          <li class="news-item">
+            <div class="date">
+              <span class="year">2021</span>
+              <span class="md">08.10</span>
+            </div>
+            <div class="category">お知らせ</div>
+            <div class="content">サイトをリニューアルしました。</div>
+            <div class="arrow">→</div>
+          </li>
+          <li class="news-item">
+            <div class="date">
+              <span class="year">2021</span>
+              <span class="md">08.08</span>
+            </div>
+            <div class="category">お知らせ</div>
+            <div class="content">株式会社WORDSは創立2周年を迎えました。</div>
+            <div class="arrow">→</div>
+          </li>
+        </ul>
+        <div class="news-footer">
+          <button class="news-button">すべてのニュースを見る</button>
+        </div>
+      </div>
+    </a>
       </div>
     </div>
   </section>
@@ -162,37 +205,39 @@ img.emoji {
     </div>
   </section>
   <section class="marquee-section">
-    <div class="marquee-wrapper">
-      <div class="marquee">
-        <!-- １セット目 -->
-        <img src="{% static 'timel/images/store1.png' %}" alt="store1">
-        <img src="{% static 'timel/images/store2.png' %}" alt="store2">
-        <img src="{% static 'timel/images/store3.png' %}" alt="store3">
-        <img src="{% static 'timel/images/store4.png' %}" alt="store4">
-        <img src="{% static 'timel/images/store5.png' %}" alt="store5">
-        <!-- ループ用に同じセットをもう１回 -->
-        <img src="{% static 'timel/images/store1.png' %}" alt="store1">
-        <img src="{% static 'timel/images/store2.png' %}" alt="store2">
-        <img src="{% static 'timel/images/store3.png' %}" alt="store3">
-        <img src="{% static 'timel/images/store4.png' %}" alt="store4">
-        <img src="{% static 'timel/images/store5.png' %}" alt="store5">
+    <div class="ticker-border">
+      <div class="text-ticker-wrapper">
+        <div class="text-ticker">
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <!-- ループ用にもう一度同じ内容 -->
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <span>meeebo</span>
+          <span>meeebo</span>
+        </div>
       </div>
     </div>
+    <div class="gallery">
+      <img id="mainImage" src="{% static 'timel/images/store1.png' %}" alt="メイン画像">
+      <div class="thumbnails">
+        <img class="thumb" src="{% static 'timel/images/store2.png' %}" alt="サムネイル2">
+        <img class="thumb" src="{% static 'timel/images/store3.png' %}" alt="サムネイル3">
+        <img class="thumb" src="{% static 'timel/images/store4.png' %}" alt="サムネイル4">
+        <img class="thumb" src="{% static 'timel/images/store5.png' %}" alt="サムネイル5">
+      </div>
+    </div>
+    <div class="indicator"></div>
   </section>
   <section id="service">
     <!-- ★ -->
     <div class="service-page">
       <div class="service-container">
         <div class="title-section">
-          <div class="title-container">
-            <img
-              src="{% static 'timel/images/service_name.png' %}"
-              alt="サービス特徴"
-              class="block mx-auto max-w-full h-auto header-img"
-            >
-          </div>
-        </div>
-  
         <div class="services-grid">
           <!-- サービス1 -->
           <div class="service-card" data-index="0">
@@ -203,7 +248,7 @@ img.emoji {
             </div>
             <h3 class="service-title">フリードリンク</h3>
             <div class="divider"></div>
-            <p class="service-description">全自動コーヒーメーカー、紅茶やお茶のドリンクサービスが充実！</p>
+            <!-- <p class="service-description">全自動コーヒーメーカー、紅茶やお茶のドリンクサービスが充実！</p> -->
           </div>
           <!-- サービス2 -->
           <div class="service-card" data-index="0">
@@ -213,10 +258,10 @@ img.emoji {
               </div>
             </div>
             <h3 class="service-title">
-              飲食物<br class="sp-only" />持ち込み可
+              飲食物<br>持ち込み可
             </h3>
             <div class="divider"></div>
-            <p class="service-description">ボードゲームカフェでは珍しいく、飲食物の持ち込み可となっておりますので、ご自由にお持ち込みください。</p>
+            <!-- <p class="service-description">ボードゲームカフェでは珍しいく、飲食物の持ち込み可となっておりますので、ご自由にお持ち込みください。</p> -->
           </div>
           <!-- サービス3 -->
           <div class="service-card" data-index="0">
@@ -229,7 +274,7 @@ img.emoji {
             </div>
             <h3 class="service-title">フリーWIFI</h3>
             <div class="divider"></div>
-            <p class="service-description">快適なネット環境を提供します。</p>
+            <!-- <p class="service-description">快適なネット環境を提供します。</p> -->
           </div>
           <!-- サービス4 -->
           <div class="service-card" data-index="0">
@@ -243,7 +288,7 @@ img.emoji {
             </div>
             <h3 class="service-title">24時間営業</h3>
             <div class="divider"></div>
-            <p class="service-description">いつでもどこでも、お好きな時間に自由にお楽しみいただけます。時間の制約なく、あなたのペースでプレイできます。</p>
+            <!-- <p class="service-description">いつでもどこでも、お好きな時間に自由にお楽しみいただけます。時間の制約なく、あなたのペースでプレイできます。</p> -->
           </div>
   
           <!-- サービス5 -->
@@ -258,7 +303,7 @@ img.emoji {
             </div>
             <h3 class="service-title">全席電源付き</h3>
             <div class="divider"></div>
-            <p class="service-description">すべての卓に電源を設置しております！</p>
+            <!-- <p class="service-description">すべての卓に電源を設置しております！</p> -->
           </div>
           
           <!-- サービス6 -->
@@ -273,7 +318,7 @@ img.emoji {
             </div>
             <h3 class="service-title">サポート充実</h3>
             <div class="divider"></div>
-            <p class="service-description">24時間365日、AIによるサポートシステムがお客様の疑問やトラブルに対応。いつでも安心してご利用いただけます。</p>
+            <!-- <p class="service-description">24時間365日、AIによるサポートシステムがお客様の疑問やトラブルに対応。いつでも安心してご利用いただけます。</p> -->
           </div>
         </div>
       </div>
@@ -282,7 +327,7 @@ img.emoji {
   <section id="meeelog">
     <div class="meeelog_container">
       <img
-      src="{% static 'timel/images/meeelog_name.png' %}"
+      src="{% static 'timel/images/beyond_name.png' %}"
       alt="Meeelog Name"
       class="meeelog_name_img"
       >
@@ -291,54 +336,67 @@ img.emoji {
         <div class="dashboard-info">
           <!-- コンテンツ -->
           <div class="meeelog_content">
-            <h4>遊びを、拡張する。</h4>
-            <p class="description">
-              マイページにログインすると、あなただけの専用プレイログ「meeelog」が表示されます。
-              <br>プレイ履歴、評価、滞在時間など、あなたの活動データがすべて確認できます。
-            </p>
-            <p class="summary">
-              まるで<br>「自分だけのボードゲーム記録帳」
-              <br>あなただけのユニークな体験をお楽しみください！
+            <h4>遊び方は、もっと広がる。</h4>
+            <p class="main_description">
+              <span class="md-line">ボードゲームの楽しさに、テクノロジーの力をプラスしました。</span>
+              <span class="md-line">AIがあなたにぴったりのゲームを提案し、ルールの疑問にはアシスタントがすぐに答えてくれる。さらに、あなたのプレイ履歴を記録し、よく遊ぶゲームやプレイ傾向を見える化。</span>
+              <span class="md-line">記録も、分析も、あなたの"好き"を深めるために。</span>
+              <span class="md-line">いつもの遊びが、</span>
+              <span class="md-line">もっと深く、</span>
+              <span class="md-line">もっと自由に。</span>
             </p>
           </div>
         </div>
-        <img
-        src="{% static 'timel/images/meeelog.png' %}"
-        alt="Meeelog"
-        class="meeelog_img"
-        >
       </div>
-      <div class="feature-actions">
-        <a href="#" class="login-btn">ログイン</a>
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-content">
-              <h3>プレイ履歴</h3>
-              <p>あなたがプレイしたすべてのボードゲームとその評価の記録</p>
+      <div class="strengths-container">
+        <div class="strengths">
+          <div class="strength-item">
+            <div class="strength-title">
+              <i class="icon fas fa-chart-line"></i>
+              <h3>meeelog</h3>
+            </div>
+            <div class="feature-tag">自動記録</div>
+            <div class="image-container">
+              <img src="/placeholder.svg?height=280&width=400" alt="meeelog機能のイメージ">
+              <div class="description">
+                <p>あなたの遊んだゲームやプレイ時間を自動で記録し、振り返りや傾向分析ができる機能です。</p>
+              </div>
             </div>
           </div>
-        
-          <div class="feature-item">
-            <div class="feature-content">
-              <h3>AIリコメンド</h3>
-              <p>あなたの好みにぴったり合うボードゲームをAIが自動でおすすめ</p>
+    
+          <div class="strength-item">
+            <div class="strength-title">
+              <i class="icon fas fa-comments"></i>
+              <h3>meeechat</h3>
+            </div>
+            <div class="feature-tag">AIサポート</div>
+            <div class="image-container">
+              <img src="/placeholder.svg?height=280&width=400" alt="meeechat機能のイメージ">
+              <div class="description">
+                <p>ルールの疑問や遊び方の相談に、いつでもAIが答えてくれるサポート機能です。</p>
+              </div>
             </div>
           </div>
-        
-          <div class="feature-item">
-            <div class="feature-content">
-              <h3>ランキング</h3>
-              <p>滞在時間、来店回数、プレイ済みボードゲーム数に応じたランキングを確認</p>
+    
+          <div class="strength-item">
+            <div class="strength-title">
+              <i class="icon fas fa-magic"></i>
+              <h3>meeeselect</h3>
             </div>
-          </div>
-        
-          <div class="feature-item">
-            <div class="feature-content">
-              <h3>友達相性分析</h3>
-              <p>一緒に遊んでいる友達との相性を分析</p>
+            <div class="feature-tag">パーソナライズ</div>
+            <div class="image-container">
+              <img src="/placeholder.svg?height=280&width=400" alt="meeeselect機能のイメージ">
+              <div class="description">
+                <p>その日の気分やプレイ履歴に合わせて、AIがあなたにぴったりのボードゲームを提案します。</p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="button-wrapper">
+        <button id="detail-button" class="modern-btn">
+          それぞれの機能について<br>もっと詳しくみる
+        </button>
       </div>
     </div>
   </section>
@@ -365,16 +423,21 @@ img.emoji {
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <!-- 画像側 -->
             <div class="flex flex-col items-center">
-              <img
-                src="{% static 'timel/images/howitworks.png' %}"
-                alt="ステップ1: 初回登録"
-                class="w-full h-auto object-cover rounded-lg"
-              >
-              <button
-              class="mt-3 px-4 py-1.5 text-sm bg-primary text-white font-medium rounded-lg shadow hover:bg-primary/90 transition w-auto"
-              >
-                View more
-              </button>
+              <picture class="w-full flex justify-center">
+                <!-- スマホ（767px以下）のときだけ howitworks_sp.png を読み込む -->
+                <source media="(max-width: 767px)" srcset="{% static 'timel/images/howitworks_sp.png' %}">
+                <!-- それ以外は howitworks.png -->
+                <img
+                  src="{% static 'timel/images/howitworks.png' %}"
+                  alt="ステップ1: 初回登録"
+                  class="transform scale-110 md:scale-100 mx-auto w-howto h-auto object-cover rounded-lg"
+                >
+              </picture>      
+              <div class="button-wrapper">
+                <button id="detail-button" class="modern-btn">
+                  ご利用方法について<br>もっと詳しくみる
+                </button>
+              </div>
             </div>
           </div>
         </div>
