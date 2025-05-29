@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-xpwocjwhlhdo5ih+7w$b^(&3y^klte$b0mh&nyskbkj05*zivo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '54.199.164.88']
+ALLOWED_HOSTS = [
+    '54.199.164.88',   # IP 直打ちでもOK
+    'meeebo.com',      # 独自ドメイン
+    'www.meeebo.com',  # www サブドメイン使うなら
+]
 
 
 # Application definition
@@ -127,7 +131,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'timel' / 'app' / 'static',  # Pathオブジェクトを使ってパスを指定
+    BASE_DIR / 'app' / 'static',  # Pathオブジェクトを使ってパスを指定
 ]
 
 LOGIN_URL = '/login/'
@@ -138,3 +142,6 @@ COGNITO_CLIENT_ID = '5snngq7nn2mkte7e2untsevgbb'
 AWS_REGION = 'ap-northeast-1'
 
 SECRET_KEY = "your-very-secret-key"  # settings.py に置いてもOK
+
+# collectstatic がまとめる先（本番用）
+STATIC_ROOT = BASE_DIR / 'static'

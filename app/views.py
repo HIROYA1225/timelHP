@@ -218,3 +218,9 @@ def show_qr_view(request):
     user_sub = request.session.get("cognito_sub")
     img_qr = generate_entry_qr(user_sub)
     return render(request, 'timel/enter_qr.html', {"img_qr": img_qr})
+
+def privacy_policy_view(request):
+    """
+    プライバシーポリシーページを表示
+    """
+    return render(request, 'timel/policy.html')

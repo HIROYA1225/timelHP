@@ -134,63 +134,62 @@ $( document ).ready(function() {
 
 	//////////// Event Gallery Slider
 
-	var ScreeNO = $('#EventGallery .swiper-slide').length,
-		html = '',
-		$NumHolder = $('.numberHolder .cageMover'),
-		$EventTitle = $('#EventGallery .infomation .title'),
-		$EventText = $('#EventGallery .infomation .text');
+	// ① スライド数と数字ナンバー生成部分はそのまま
+	var ScreeNO       = $('#EventGallery .swiper-slide').length,
+		html          = '',
+		$NumHolder    = $('.numberHolder .cageMover'),
+		// info 表示用要素をキャッシュ
+		$EventTitle   = $('#EventGallery .infomation .title'),
+		$EventText    = $('#EventGallery .infomation .text');
 
-		for (i = 0; i < ScreeNO; i++) { 
-			var Num = i + 1;
-			html += '<div>'+ Num +'</div>';
-		}
-
-		$('.no2 .cageMover').append(html);
-		$('.no2 .cageMover div:eq(0)').addClass('active');
-
+	// 数字ナンバーを入れる
+	for (var i = 0; i < ScreeNO; i++) {
+	html += '<div>' + (i + 1) + '</div>';
+	}
+	$NumHolder.append(html);
+	$NumHolder.find('div:eq(0)').addClass('active');
 
 
+	// ② Swiper 初期化
 	var EventGallery = new Swiper('#EventGallery .swiper-container', {
-		navigation: {
-			nextEl: '#EventGallery .arrowF',
-			prevEl: '#EventGallery .arrowB',
+	navigation: {
+		nextEl: '#EventGallery .arrowF',
+		prevEl: '#EventGallery .arrowB',
+	},
+	on: {
+		slideChange: function () {
+		var idx       = EventGallery.activeIndex,
+			moveValue = idx * 49;
+
+		// ナンバー上下スクロール
+		$NumHolder.css('top', '-' + moveValue + 'px');
+		$NumHolder.find('div').removeClass('active')
+					.eq(idx).addClass('active');
+
+		// タイトル・テキスト更新
+		updateTitle();
 		},
-		on: {
-			slideChange: function () {
-
-				var indexNO = EventGallery.activeIndex,
-					moveValue = indexNO*49;
-
-				$NumHolder.css('top','-'+ moveValue +'');
-				$('.no2 .cageMover div').removeClass('active');
-				$('.no2 .cageMover div:eq('+ indexNO +')').addClass('active');
-
-				upadteTitle();
-
-			},
-		},
-		keyboard: {
-			enabled: true,
-			onlyInViewport: false,
-		},
+	},
+	keyboard: {
+		enabled: true,
+		onlyInViewport: false,
+	},
 	});
 
-	upadteTitle();
+	// ③ 初回表示
+	updateTitle();
 
-	function upadteTitle(){
 
+	// ④ updateTitle 関数
+	function updateTitle(){
+	var $slide = $('#EventGallery .swiper-slide-active'),
+		// data 属性から取得
+		title  = $slide.data('title') || $slide.attr('data-title'),
+		text   = $slide.data('text')  || $slide.attr('data-text');
 
-		setTimeout(function(){ 
-			var $index = $('#EventGallery .swiper-slide-active'),
-				title = $index.attr('title'),
-				text = $index.attr('text'),
-				$info = $('#EventGallery .info');
-
-			$info.empty();
-			$info.append('<div class="title">'+title+'</div><div class="text">'+text+'</div>')
-
-		}, 300);
-
+	// 既存の要素に差し替え
+	$EventTitle.text(title || '');
+	$EventText.text(text || '');
 	}
 
 
@@ -623,40 +622,155 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	  });
 	});
-  });
+});
 
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
 	// タブ切り替え機能
-	const tabTriggers = document.querySelectorAll('.tab-trigger');
+	const tabButtons = document.querySelectorAll('.tab-button');
 	const tabContents = document.querySelectorAll('.tab-content');
-	
-	tabTriggers.forEach(trigger => {
-	  trigger.addEventListener('click', function() {
-		// アクティブなタブトリガーのクラスを削除
-		tabTriggers.forEach(t => t.classList.remove('active'));
+
+	tabButtons.forEach(button => {
+		button.addEventListener('click', function() {
+		// アクティブなタブボタンのクラスを削除
+		tabButtons.forEach(btn => {
+			btn.classList.remove('active');
+		});
 		
-		// クリックされたタブトリガーにアクティブクラスを追加
+		// クリックされたボタンにアクティブクラスを追加
 		this.classList.add('active');
 		
 		// タブコンテンツを非表示にする
-		tabContents.forEach(content => content.classList.remove('active'));
+		tabContents.forEach(content => {
+			content.classList.remove('active');
+		});
 		
-		// クリックされたタブに対応するコンテンツを表示
+		// クリックされたボタンに対応するコンテンツを表示
 		const tabId = this.getAttribute('data-tab');
 		document.getElementById(tabId).classList.add('active');
-	  });
+		});
 	});
-	
+
 	// ホバーエフェクト
 	const hoverItems = document.querySelectorAll('.price-item, .pack-item');
-	
+
 	hoverItems.forEach(item => {
-	  item.addEventListener('mouseenter', function() {
+		item.addEventListener('mouseenter', function() {
 		this.style.transform = 'scale(1.05)';
-	  });
-	  
-	  item.addEventListener('mouseleave', function() {
+		});
+		
+		item.addEventListener('mouseleave', function() {
 		this.style.transform = 'scale(1)';
+		});
+	});
+	const items = document.querySelectorAll('.feature-item');
+	const io = new IntersectionObserver((entries, obs) => {
+		entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('visible');
+			obs.unobserve(entry.target);
+		}
+		});
+	}, { threshold: 0.1 });
+
+	items.forEach(item => io.observe(item));
+
+	const ticker = document.querySelector('.text-ticker');
+	if (!ticker) return;
+	// 中身を複製してループ用に２セットに
+	ticker.innerHTML += ticker.innerHTML;
+
+	/* strength */
+	const strengthItems = document.querySelectorAll('.strength-item');
+      
+	// タッチデバイス用の対応
+	strengthItems.forEach(item => {
+	  item.addEventListener('touchstart', function() {
+		const currentActive = document.querySelector('.strength-item.active');
+		if (currentActive && currentActive !== item) {
+		  currentActive.classList.remove('active');
+		}
+		item.classList.toggle('active');
+	  }, {passive: true});
+	});
+	// スクロールアニメーション
+	const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+		entry.target.classList.add('animate');
+		observer.unobserve(entry.target);
+		}
+	});
+	}, {
+	threshold: 0.1
+	});
+
+	strengthItems.forEach(item => {
+	observer.observe(item);
+	});
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	const mainImg   = document.getElementById('mainImage');
+	const thumbs    = Array.from(document.querySelectorAll('.thumb'));
+	const indicator = document.querySelector('.indicator');
+  
+	// ① 静的な画像リストを保持（indicator用）
+	const imageList = [ mainImg.src, ...thumbs.map(t => t.src) ];
+	const total     = imageList.length;
+  
+	// ② ドットを生成
+	for (let i = 0; i < total; i++) {
+	  const dot = document.createElement('span');
+	  if (i === 0) dot.classList.add('active');
+	  indicator.appendChild(dot);
+	}
+	const dots = Array.from(indicator.children);
+  
+	// ドット表示だけ更新する関数
+	function updateIndicator() {
+	  const idx = imageList.findIndex(src => src === mainImg.src);
+	  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+	}
+  
+	// ③ サムネクリックで main⇔thumb をスワップ＆indicator更新
+	thumbs.forEach(thumb => {
+	  thumb.addEventListener('click', () => {
+		const tmp = mainImg.src;
+		mainImg.src = thumb.src;
+		thumb.src   = tmp;
+		updateIndicator();
 	  });
 	});
+  
+	// ④ スワイプで前後切替も同じく swap＆indicator更新
+	let startX = 0;
+	mainImg.addEventListener('touchstart', e => {
+	  startX = e.touches[0].clientX;
+	});
+	mainImg.addEventListener('touchend', e => {
+	  const diff = e.changedTouches[0].clientX - startX;
+	  if (Math.abs(diff) > 50) {
+		// static list から今の位置を取って次/前を決定
+		const idx = imageList.findIndex(src => src === mainImg.src);
+		const nextIdx = diff < 0
+		  ? (idx + 1) % total
+		  : (idx - 1 + total) % total;
+		const nextSrc = imageList[nextIdx];
+  
+		// nextSrc を持つサムネを探して swap
+		const target = thumbs.find(t => t.src === nextSrc);
+		if (target) {
+		  const tmp = mainImg.src;
+		  mainImg.src = nextSrc;
+		  target.src  = tmp;
+		} else {
+		  // 念のため直接 main だけ切り替え
+		  mainImg.src = nextSrc;
+		}
+		updateIndicator();
+	  }
+	});
   });
+  
+  
+  
