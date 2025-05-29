@@ -5099,7 +5099,7 @@ footer .smallCage a {
   .strengths {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 50px;
+	gap: 100px;
 	margin-top: 40px;
 	position: relative;
   }
@@ -5124,6 +5124,7 @@ footer .smallCage a {
 	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	position: relative;
 	z-index: 1;
+	width: 400;
   }
 
   .strength-item::before {
@@ -5189,7 +5190,7 @@ footer .smallCage a {
 
   .image-container {
 	position: relative;
-	height: 280px;
+	height: 250px;
 	overflow: hidden;
   }
 
@@ -5224,18 +5225,8 @@ footer .smallCage a {
 	position: relative;
 	padding-left: 20px;
 	line-height: 1.8;
-	font-size: 1.05rem;
-  }
-
-  .description p::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0.5em;
-	width: 8px;
-	height: 8px;
-	background-color: var(--st-accent);
-	border-radius: 50%;
+	font-size: 0.9rem;
+	color: white;
   }
 
   .strength-item:hover .description {
@@ -5319,6 +5310,7 @@ footer .smallCage a {
 	/* 画像コンテナも幅を調整 */
 	.strength-item .image-container {
 	  width: 100%;
+	  height: auto !important;
 	}
   
 	.strength-item .image-container img {
